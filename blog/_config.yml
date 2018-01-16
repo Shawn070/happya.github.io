@@ -4,7 +4,7 @@
 
 # Site
 title: 福尔摩狮的博客
-subtitle: 喵喵喵
+subtitle: 喵喵喵喵
 description: To be a better me.
 author: lionust 
 avatar: /image/sleepy-lion.jpg  
@@ -13,7 +13,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://www.quanlion.com
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
