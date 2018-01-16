@@ -1,8 +1,8 @@
 ---
-title: Brainy is the new sexy
+title: Leetcode之旅|Brainy is the new sexy|P74：Sort colors
 date: 2017-09-20 22:25:20
 tags:
-    - leetcode
+    - Leetcode
     - algorithm
     - 随笔 
 categories:
