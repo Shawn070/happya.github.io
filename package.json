@@ -760,6 +760,7 @@
       "resolved": "https://registry.npmjs.org/hexo-log/-/hexo-log-0.2.0.tgz",
       "version": "0.2.0"
     },
+    "hexo-renderer-kramed": "^0.1.4",
     "hexo-util": {
       "integrity": "sha512-zPxaqCWZz3/25SAB4FlrRtWktJ+Pr+vBiv/nyHpXKgXPt1m70liViKlRwWLqDmRjJ72x6/k4qCEeXHajvcGHUw==",
       "requires": {
