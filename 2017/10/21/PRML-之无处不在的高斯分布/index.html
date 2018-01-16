@@ -205,40 +205,94 @@
 <h2 id="1">1. 多元高斯分布</h2>
 
 
-<p>我们假设一个$D$维向量$x = (x_1,x_2,…,x_D)^T$,意味着有$D$个变量，它们整体服从多元高斯分布：<br>$$N(x|\mu,\Sigma) = (2\pi)^{-D/2}|\Sigma|^{-1/2}exp(-\frac{1}{2}(x-\mu)^T\Sigma^{-1}(x-\mu))$$<br>其中：</p>
+<p>我们假设一个$D$维向量$x = (x_1,x_2,…,x_D)^T$,意味着有$D$个变量，它们整体服从多元高斯分布：</p>
+<script type="math/tex; mode=display">N(x|\mu,\Sigma) = (2\pi)^{-D/2}|\Sigma|^{-1/2}exp(-\frac{1}{2}(x-\mu)^T\Sigma^{-1}(x-\mu))</script><p>其中：</p>
 <p>$\mu$：$D$维均值向量(mean vector)，即$\mu = (\mu_1, \mu_2,…,\mu_D)^T$</p>
 <p>$\Sigma$：$D\times D$的协方差矩阵(covariance matrix)，$\Sigma_{ij}=(x_i-\mu_i)(x_j-\mu_j)$。</p>
 <p>我们可以从$N(x|\mu, \Sigma)$中的指数项出发，理解多元高斯分布的几何意义。</p>
 <p>首先，我们来看一下这个指数项  $\Delta^2 = (x-\mu)^T\Sigma^{-1}(x-\mu)$，发现其中主要包含两部分：一个是协方差矩阵$\Sigma$，一个是平移后的$x$。</p>
-<p>若$\Sigma$有D个特征值$\lambda_1,\lambda_2,…,\lambda_D$，其对应的特征向量为$u_1, u_2, …, u<em>D$，则$$\Sigma = \sum</em>{i=1}^{D}\lambda_iu_iu_i^T$$<br>其中，若所有$\lambda_i$都大于0，则说$\Sigma$是正定的(positive definite);若存在$\lambda_i = 0$,则说该分布是奇异的，说明其可以在低维子空间表达；若所有$\lambda$非负，则说明$\Sigma$是半正定的(positive semidefinite)。</p>
+<p>若$\Sigma$有D个特征值$\lambda<em>1,\lambda_2,…,\lambda_D$，其对应的特征向量为$u_1, u_2, …, u_D$，则$$\Sigma = \sum</em>{i=1}^{D}\lambda_iu_iu_i^T$$<br>其中，若所有$\lambda_i$都大于0，则说$\Sigma$是正定的(positive definite);若存在$\lambda_i = 0$,则说该分布是奇异的，说明其可以在低维子空间表达；若所有$\lambda$非负，则说明$\Sigma$是半正定的(positive semidefinite)。</p>
 <p>$u_i$满足正交归一条件，即:</p>
-<p>$$u_i^Tu<em>j=I</em>{ij}=<br>\begin{cases}<br>1&amp; {i=j}\<br>0&amp; {i\neq j}<br>\end{cases}$$</p>
-<p>令$U=(u_1,u_2,…,u<em>D)$，则$UU^T = I$。因此：<br>\begin{equation}<br>\Delta^2 = \sum</em>{i=1}^{D}(x-\mu)^T\lambda_i^{-1}u_iu_i^T(x-\mu)<br>\end{equation}<br>令$y_i = u_i^T(x-\mu)$,可以看出这是一个数，那么$y_i^T = (x-\mu)^Tu_i$也是个数。因此，</p>
-<p>\begin{equation}<br>\Delta^2 = \sum_{i=1}^{D}\lambda_i^{-1}y_i^Ty<em>i=\sum</em>{i=1}^{D}\lambda_i^{-1}y_i^2<br>\end{equation}</p>
+<script type="math/tex; mode=display">u_i^Tu_j=I_{ij}=
+\begin{cases}
+1& {i=j}\\
+0& {i\neq j}
+\end{cases}</script><p>令$U=(u<em>1,u_2,…,u_D)$，则$UU^T = I$。因此：<br>\begin{equation}<br>\Delta^2 = \sum</em>{i=1}^{D}(x-\mu)^T\lambda_i^{-1}u_iu_i^T(x-\mu)<br>\end{equation}<br>令$y_i = u_i^T(x-\mu)$,可以看出这是一个数，那么$y_i^T = (x-\mu)^Tu_i$也是个数。因此，</p>
+<p>\begin{equation}<br>\Delta^2 = \sum<em>{i=1}^{D}\lambda_i^{-1}y_i^Ty_i=\sum</em>{i=1}^{D}\lambda_i^{-1}y_i^2<br>\end{equation}</p>
 <p>可见指数项由向量计算变成了普通的数值计算。可以看出，$y_i$就是$u_i$与$x-\mu$的向量内积，也可以看作向量$x$先进行平移将重心移到原点变成$(x-\mu)$，而后在基矢$u_i$上的投影值。因此，$y = (y_1,y_2,…,y_D)^T$ 可看作$x-\mu$在基矢$U$张成的线性空间的新坐标值。所以从$x$到$y$是做了个线性变换，$y = U^T(x-\mu), x= Uy+\mu$。</p>
-<p>从$x$到$y$的坐标系统，其Jacobi矩阵为$J_{ij} = \frac{\partial x_i}{\partial y<em>j}=U</em>{ij}$,$|J|^2 = |U|^2 = 1$, $|J| =1$。</p>
+<p>从$x$到$y$的坐标系统，其Jacobi矩阵为$J<em>{ij} = \frac{\partial x_i}{\partial y_j}=U</em>{ij}$,$|J|^2 = |U|^2 = 1$, $|J| =1$。</p>
 <p>在$y$的坐标系统中，其分布为:<br>\begin{equation}<br>p(y) = p(x)|J| = \prod_{i=1}^{D}(2\pi\lambda_i)^{-1/2}exp(-\frac{y_1^2}{2\lambda_i})<br>\end{equation}</p>
 <p>可见其中没有了矩阵的操作，而是简化成了$D$个普通的单变量高斯分布的相乘，且这个单变量高斯分布中：$\mu = 0, \sigma^2 = \lambda$。<br> <a id="more"></a></p>
 <h3 id="1.1">1.1 期望和方差</h3>
 
-<p>由上节可知，多元高斯分布可以表示为：<br>$$<br>\begin{equation}<br>p(x)=(2\pi)^{-D/2}\Sigma^{-1/2}\int exp(-\frac{1}{2}\Delta^2))<br>\end{equation}<br>$$<br>$$\Delta^2 = (x-\mu)^T\Sigma^{-1}(x-\mu)$$</p>
-<p>因此，计算其期望(expectation)可先作变换$z=x-\mu$,则<br>$$<br>\begin{equation}<br>E[x] = (2\pi)^{-D/2}\Sigma^{-1/2}\int exp(-\frac{1}{2}z^T\Sigma^{-1}z)(z+\mu)dz<br>\end{equation}<br>$$</p>
-<p>可见指数项是关于$z$的偶函数，而积分区间是$(-\infty,\infty)$,由对称性可知,与$z$的相乘项为0，积分简化为<br>$$<br>\begin{equation}<br> E[x]=\mu \cdot (2\pi)^{-D/2}\Sigma^{-1/2}\int exp(-\frac{1}{2}z^T\Sigma^{-1}z)dz<br>\end{equation}<br>$$</p>
-<p>$\mu$后面的部分由归一化条件可知为1，所以，$E[x]=\mu$。</p>
+<p>由上节可知，多元高斯分布可以表示为：</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+p(x)=(2\pi)^{-D/2}\Sigma^{-1/2}\int exp(-\frac{1}{2}\Delta^2))
+\end{equation}</script><script type="math/tex; mode=display">\Delta^2 = (x-\mu)^T\Sigma^{-1}(x-\mu)</script><p>因此，计算其期望(expectation)可先作变换$z=x-\mu$,则</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+E[x] = (2\pi)^{-D/2}\Sigma^{-1/2}\int exp(-\frac{1}{2}z^T\Sigma^{-1}z)(z+\mu)dz
+\end{equation}</script><p>可见指数项是关于$z$的偶函数，而积分区间是$(-\infty,\infty)$,由对称性可知,与$z$的相乘项为0，积分简化为</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+ E[x]=\mu \cdot (2\pi)^{-D/2}\Sigma^{-1/2}\int exp(-\frac{1}{2}z^T\Sigma^{-1}z)dz
+\end{equation}</script><p>$\mu$后面的部分由归一化条件可知为1，所以，$E[x]=\mu$。</p>
 <p>对多元高斯分布，我们对其方差，或者说协方差的求法和单变量高斯分布的类似，对单变量高斯分布，其一阶矩$E[x]=\mu$，二阶矩$E[x^2]=\mu^2+\sigma^2$,即方差$\sigma^2 = E[x^2]-E[x]^2$。因此，对多元高斯分布，我们首先求其二阶矩$E[x_ix_j]$,即$E[xx^T]$。</p>
-<p>$$<br>\begin{equation}<br>E[xx^T] = (2\pi)^{-D/2}\Sigma^{-1/2}\int exp(-\frac{1}{2}z^T\Sigma^{-1}z)(z+\mu)(z+\mu)^Tdz<br>\end{equation}<br>$$</p>
-<p>由对称性可知，所有的$\mu z^T,z\mu^T$项都为0，而$\mu\mu^T$为常数项，事实上，由上一步求期望可知，该项值其实就为$\mu\mu^T$。所以，在这里，我们需要考虑的只有 $zz^T$ 项。</p>
+<script type="math/tex; mode=display">
+\begin{equation}  
+E[xx^T] = (2\pi)^{-D/2}\Sigma^{-1/2}\int exp(-\frac{1}{2}z^T\Sigma^{-1}z)(z+\mu)(z+\mu)^Tdz
+\end{equation}</script><p>由对称性可知，所有的$\mu z^T,z\mu^T$项都为0，而$\mu\mu^T$为常数项，事实上，由上一步求期望可知，该项值其实就为$\mu\mu^T$。所以，在这里，我们需要考虑的只有 $zz^T$ 项。</p>
 <p>由上一部分的内容可知，我们可以通过将$z$投影到新的$y$坐标系,即$z=\sum_{j=1}^{D}y_ju_j$，使计算大大简化。依此，$zz^T$项可表示为：</p>
-<p>$$<br>\begin{eqnarray}<br>E[zz^T]&amp;=&amp;(2\pi)^{-D/2}\Sigma^{-1/2}\int exp(-\frac{1}{2}z^T\Sigma^{-1}z)zz^Tdz\<br>&amp; = &amp;(2\pi)^{-D/2}\Sigma^{-1/2}\sum_{i=1,j=1}^{D}u_iu<em>j^T\int exp(-\frac{1}{2}\sum</em>{k=1}^D \frac{y_k^2}{\lambda_k})y_iy_jdy<br>\end{eqnarray}<br>$$<br>由对称性可知，只有$i=j=k$的项保留，且由于此处可运用单变量高斯分布中的结论$E[x^2]=\mu^2+\lambda^2$,而此积分项中，对应的$\mu=0,\sigma^2=\lambda<em>k$，因此<br>$$<br>\begin{equation}<br>   E[zz^T]=\sum</em>{i=1}^D u_iu_i^T\lambda_i = \Sigma<br>\end{equation}<br>$$<br>即$E[xx^T]=\Sigma+\mu\mu^T$<br>因此<br>$$<br>\begin{equation}<br>cov[x] = E[xx^T]-E[x]E[x]^T= \Sigma<br>\end{equation}<br>$$<br>可见，上一节中多变量高斯分布表达式$N(x|\mu,\Sigma)$中的两个参数$\mu$和$\Sigma$即为该分布的期望和协方差。</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+E[zz^T]&=&(2\pi)^{-D/2}\Sigma^{-1/2}\int exp(-\frac{1}{2}z^T\Sigma^{-1}z)zz^Tdz\\
+& = &(2\pi)^{-D/2}\Sigma^{-1/2}\sum_{i=1,j=1}^{D}u_iu_j^T\int exp(-\frac{1}{2}\sum_{k=1}^D \frac{y_k^2}{\lambda_k})y_iy_jdy
+\end{eqnarray}</script><p>由对称性可知，只有$i=j=k$的项保留，且由于此处可运用单变量高斯分布中的结论$E[x^2]=\mu^2+\lambda^2$,而此积分项中，对应的$\mu=0,\sigma^2=\lambda_k$，因此</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+   E[zz^T]=\sum_{i=1}^D u_iu_i^T\lambda_i = \Sigma 
+\end{equation}</script><p>即$E[xx^T]=\Sigma+\mu\mu^T$<br>因此</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+cov[x] = E[xx^T]-E[x]E[x]^T= \Sigma
+\end{equation}</script><p>可见，上一节中多变量高斯分布表达式$N(x|\mu,\Sigma)$中的两个参数$\mu$和$\Sigma$即为该分布的期望和协方差。</p>
 <p>先写到这，剩下的慢慢更~~~</p>
 <h3 id="1.2">1.2 条件高斯分布</h3>
 
 <p>假设 $x$ 是服从高斯分布 $N(x|\mu,\Sigma)$ 的 D 维向量，把 $x$ 划分为两个不相交的子集 $x_a,x_b$。不失一般性的，令 $x_a$ 为 $x$ 的前 M个分量，令 $x_b$ 为剩余的 D-M 个分量，得到：</p>
-<p>$$<br>        \begin{pmatrix}<br>        x_a \<br>        x_b<br>        \end{pmatrix}<br>$$<br>对应的均值向量$\mu$的划分：<br>$$<br>        \begin{pmatrix}<br>        \mu_a \<br>        \mu<em>b<br>        \end{pmatrix}<br>$$<br>协方差矩阵为：<br>$$<br>        \begin{pmatrix}<br>        \Sigma</em>{aa} &amp; \Sigma<em>{ab} \<br>        \Sigma</em>{ba} &amp; \Sigma<em>{bb}<br>        \end{pmatrix}<br>$$<br>这里我们通过取协方差的倒数来定义精度矩阵：$\Lambda=\Sigma^{-1}$，<br>$$<br>\begin{pmatrix}<br>\Lambda</em>{aa} &amp; \Lambda<em>{ab} \<br>\Lambda</em>{ba} &amp; \Lambda_{bb}<br>\end{pmatrix}<br>$$</p>
-<p>定义条件概率$p(x)=p(x_a,x_b)$，即在$x_b$固定的前提下求$x_a$的分布，可知其也是一个高斯分布，因此我们可通过分析其指数项的特征来获悉具体的参数表达。</p>
-<p>—分割线——-</p>
-<p>首先，我们来看下任意高斯分布的指数项：<br>$$<br>\begin{equation}<br>   -\frac{1}{2}(x-\mu)^T\Sigma^{-1}(x-\mu)=-\frac{1}{2}x^T\Sigma^{-1}x+x^T\Sigma^{-1}\mu+const(\text{indenpendent on x})<br>\end{equation}<br>$$<br>又由于<br>$$<br>\begin{equation}<br>    -\frac{1}{2}(x-\mu)^T\Sigma^{-1}(x-\mu)=\<br>    -\frac{1}{2}(x_a-\mu_a)^T\Sigma^{-1}(x_a-\mu_a)-\frac{1}{2}(x_a-\mu_a)^T\Sigma^{-1}(x_b-\mu_b)\<br>    -\frac{1}{2}(x_b-\mu_b)^T\Sigma^{-1}(x_a-\mu_a)-\frac{1}{2}(x_b-\mu_b)^T\Sigma^{-1}(x_a-\mu_a)<br>\end{equation}<br>$$</p>
-<h3 id="1.3">1.3 边缘高斯分布</h3>
+<script type="math/tex; mode=display">
+        \begin{pmatrix}
+        x_a \\
+        x_b
+        \end{pmatrix}</script><p>对应的均值向量$\mu$的划分：</p>
+<script type="math/tex; mode=display">
+        \begin{pmatrix}
+        \mu_a \\
+        \mu_b
+        \end{pmatrix}</script><p>协方差矩阵为：</p>
+<script type="math/tex; mode=display">
+        \begin{pmatrix}
+        \Sigma_{aa} & \Sigma_{ab} \\
+        \Sigma_{ba} & \Sigma_{bb}
+        \end{pmatrix}</script><p>这里我们通过取协方差的倒数来定义精度矩阵：$\Lambda=\Sigma^{-1}$，</p>
+<script type="math/tex; mode=display">
+\begin{pmatrix}
+\Lambda_{aa} & \Lambda_{ab} \\
+\Lambda_{ba} & \Lambda_{bb}
+\end{pmatrix}</script><p>定义条件概率$p(x)=p(x_a,x_b)$，即在$x_b$固定的前提下求$x_a$的分布，可知其也是一个高斯分布，因此我们可通过分析其指数项的特征来获悉具体的参数表达。</p>
+<p>—-分割线———-</p>
+<p>首先，我们来看下任意高斯分布的指数项：</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+   -\frac{1}{2}(x-\mu)^T\Sigma^{-1}(x-\mu)=-\frac{1}{2}x^T\Sigma^{-1}x+x^T\Sigma^{-1}\mu+const(\text{indenpendent on x}) 
+\end{equation}</script><p>又由于</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+    -\frac{1}{2}(x-\mu)^T\Sigma^{-1}(x-\mu)=\\
+    -\frac{1}{2}(x_a-\mu_a)^T\Sigma^{-1}(x_a-\mu_a)-\frac{1}{2}(x_a-\mu_a)^T\Sigma^{-1}(x_b-\mu_b)\\
+    -\frac{1}{2}(x_b-\mu_b)^T\Sigma^{-1}(x_a-\mu_a)-\frac{1}{2}(x_b-\mu_b)^T\Sigma^{-1}(x_a-\mu_a)
+\end{equation}</script><h3 id="1.3">1.3 边缘高斯分布</h3>
 
 <h3 id="1.4">1.4 贝叶斯定理</h3>
 
@@ -562,11 +616,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">娱乐八卦</a>
+                <a href="javascript:void(0)" class="js-tag color5">英语学习</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">英语学习</a>
+                <a href="javascript:void(0)" class="js-tag color5">娱乐八卦</a>
               </li>
              
               <li class="article-tag-list-item">

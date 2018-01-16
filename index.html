@@ -407,18 +407,22 @@
 <h2 id="1">1. 多元高斯分布</h2>
 
 
-<p>我们假设一个$D$维向量$x = (x_1,x_2,…,x_D)^T$,意味着有$D$个变量，它们整体服从多元高斯分布：<br>$$N(x|\mu,\Sigma) = (2\pi)^{-D/2}|\Sigma|^{-1/2}exp(-\frac{1}{2}(x-\mu)^T\Sigma^{-1}(x-\mu))$$<br>其中：</p>
+<p>我们假设一个$D$维向量$x = (x_1,x_2,…,x_D)^T$,意味着有$D$个变量，它们整体服从多元高斯分布：</p>
+<script type="math/tex; mode=display">N(x|\mu,\Sigma) = (2\pi)^{-D/2}|\Sigma|^{-1/2}exp(-\frac{1}{2}(x-\mu)^T\Sigma^{-1}(x-\mu))</script><p>其中：</p>
 <p>$\mu$：$D$维均值向量(mean vector)，即$\mu = (\mu_1, \mu_2,…,\mu_D)^T$</p>
 <p>$\Sigma$：$D\times D$的协方差矩阵(covariance matrix)，$\Sigma_{ij}=(x_i-\mu_i)(x_j-\mu_j)$。</p>
 <p>我们可以从$N(x|\mu, \Sigma)$中的指数项出发，理解多元高斯分布的几何意义。</p>
 <p>首先，我们来看一下这个指数项  $\Delta^2 = (x-\mu)^T\Sigma^{-1}(x-\mu)$，发现其中主要包含两部分：一个是协方差矩阵$\Sigma$，一个是平移后的$x$。</p>
-<p>若$\Sigma$有D个特征值$\lambda_1,\lambda_2,…,\lambda_D$，其对应的特征向量为$u_1, u_2, …, u<em>D$，则$$\Sigma = \sum</em>{i=1}^{D}\lambda_iu_iu_i^T$$<br>其中，若所有$\lambda_i$都大于0，则说$\Sigma$是正定的(positive definite);若存在$\lambda_i = 0$,则说该分布是奇异的，说明其可以在低维子空间表达；若所有$\lambda$非负，则说明$\Sigma$是半正定的(positive semidefinite)。</p>
+<p>若$\Sigma$有D个特征值$\lambda<em>1,\lambda_2,…,\lambda_D$，其对应的特征向量为$u_1, u_2, …, u_D$，则$$\Sigma = \sum</em>{i=1}^{D}\lambda_iu_iu_i^T$$<br>其中，若所有$\lambda_i$都大于0，则说$\Sigma$是正定的(positive definite);若存在$\lambda_i = 0$,则说该分布是奇异的，说明其可以在低维子空间表达；若所有$\lambda$非负，则说明$\Sigma$是半正定的(positive semidefinite)。</p>
 <p>$u_i$满足正交归一条件，即:</p>
-<p>$$u_i^Tu<em>j=I</em>{ij}=<br>\begin{cases}<br>1&amp; {i=j}\<br>0&amp; {i\neq j}<br>\end{cases}$$</p>
-<p>令$U=(u_1,u_2,…,u<em>D)$，则$UU^T = I$。因此：<br>\begin{equation}<br>\Delta^2 = \sum</em>{i=1}^{D}(x-\mu)^T\lambda_i^{-1}u_iu_i^T(x-\mu)<br>\end{equation}<br>令$y_i = u_i^T(x-\mu)$,可以看出这是一个数，那么$y_i^T = (x-\mu)^Tu_i$也是个数。因此，</p>
-<p>\begin{equation}<br>\Delta^2 = \sum_{i=1}^{D}\lambda_i^{-1}y_i^Ty<em>i=\sum</em>{i=1}^{D}\lambda_i^{-1}y_i^2<br>\end{equation}</p>
+<script type="math/tex; mode=display">u_i^Tu_j=I_{ij}=
+\begin{cases}
+1& {i=j}\\
+0& {i\neq j}
+\end{cases}</script><p>令$U=(u<em>1,u_2,…,u_D)$，则$UU^T = I$。因此：<br>\begin{equation}<br>\Delta^2 = \sum</em>{i=1}^{D}(x-\mu)^T\lambda_i^{-1}u_iu_i^T(x-\mu)<br>\end{equation}<br>令$y_i = u_i^T(x-\mu)$,可以看出这是一个数，那么$y_i^T = (x-\mu)^Tu_i$也是个数。因此，</p>
+<p>\begin{equation}<br>\Delta^2 = \sum<em>{i=1}^{D}\lambda_i^{-1}y_i^Ty_i=\sum</em>{i=1}^{D}\lambda_i^{-1}y_i^2<br>\end{equation}</p>
 <p>可见指数项由向量计算变成了普通的数值计算。可以看出，$y_i$就是$u_i$与$x-\mu$的向量内积，也可以看作向量$x$先进行平移将重心移到原点变成$(x-\mu)$，而后在基矢$u_i$上的投影值。因此，$y = (y_1,y_2,…,y_D)^T$ 可看作$x-\mu$在基矢$U$张成的线性空间的新坐标值。所以从$x$到$y$是做了个线性变换，$y = U^T(x-\mu), x= Uy+\mu$。</p>
-<p>从$x$到$y$的坐标系统，其Jacobi矩阵为$J_{ij} = \frac{\partial x_i}{\partial y<em>j}=U</em>{ij}$,$|J|^2 = |U|^2 = 1$, $|J| =1$。</p>
+<p>从$x$到$y$的坐标系统，其Jacobi矩阵为$J<em>{ij} = \frac{\partial x_i}{\partial y_j}=U</em>{ij}$,$|J|^2 = |U|^2 = 1$, $|J| =1$。</p>
 <p>在$y$的坐标系统中，其分布为:<br>\begin{equation}<br>p(y) = p(x)|J| = \prod_{i=1}^{D}(2\pi\lambda_i)^{-1/2}exp(-\frac{y_1^2}{2\lambda_i})<br>\end{equation}</p>
 <p>可见其中没有了矩阵的操作，而是简化成了$D$个普通的单变量高斯分布的相乘，且这个单变量高斯分布中：$\mu = 0, \sigma^2 = \lambda$。<br>
         
@@ -507,29 +511,30 @@
 <ul>
 <li><p>所谓局部线性，就是认为在整个数据集的某小范围内，数据是线性的，就比如虽然地球是圆的，但我们还是可以认为我们的篮球场是个平面；而这个“小范围”，最直接的办法就是k-近邻原则。这个“近邻”的判断也可以是不同的依据：比如欧氏距离，测地距离等。</p>
 </li>
-<li><p>既然是线性，那么对每个数据点$x_i$(D维数据，即$D\times 1$的列向量)，可以用其k近邻的数据点的线性组合来表示，即$x<em>i = \sum</em>{j=1}^{k}w<em>{ji}x</em>{ji}$。其中，$w<em>i$是$k\times 1$的列向量，$w</em>{ji}$是$w<em>i$的第$j$行,$x</em>{ji}$是$x_i$的第j个近邻点。</p>
+<li><p>既然是线性，那么对每个数据点$x<em>i$(D维数据，即$D\times 1$的列向量)，可以用其k近邻的数据点的线性组合来表示，即$x_i = \sum</em>{j=1}^{k}w<em>{ji}x</em>{ji}$。其中，$w<em>i$是$k\times 1$的列向量，$w</em>{ji}$是$w<em>i$的第$j$行,$x</em>{ji}$是$x_i$的第j个近邻点。</p>
 </li>
 </ul>
 <ul>
-<li><p>通过使loss function最小化：<br>$$ \arg\min \limits<em>{W}\sum</em>{i=1}^{N}(|x<em>i-\sum</em>{j=1}^{k}w<em>{ji}x</em>{ji}|_2^2)$$<br>得到权重系数$w = [w_1, w_2, …, w_N]$,一共N个数据点，对应$N$列$w_i$。</p>
+<li><p>通过使loss function最小化： </p>
+<script type="math/tex; mode=display">\arg\min \limits_{W}\sum_{i=1}^{N}(\|x_i-\sum_{j=1}^{k}w_{ji}x_{ji}\|_2^2)</script><p>得到权重系数$w = [w_1, w_2, …, w_N]$,一共N个数据点，对应$N$列$w_i$。</p>
 </li>
 <li><p>接下来是LLE中又一个假设：即认为将原始数据从D维降到d维后，$x_i(D\times 1) \rightarrow y_i(d\times 1)$,其依旧可以表示为其k近邻的线性组合，且组合系数不变，即$w_i$,再一次通过最小化loss function:</p>
 </li>
 </ul>
-<p>$$ \arg\min \limits<em>{Y}\sum</em>{i=1}^{N}(|y<em>i-\sum</em>{j=1}^{k}w<em>{ji}y</em>{ji}|_2^2)$$</p>
-<p>得到降维后的数据。</p>
+<script type="math/tex; mode=display">\arg\min \limits_{Y}\sum_{i=1}^{N}(\|y_i-\sum_{j=1}^{k}w_{ji}y_{ji}\|_2^2)</script><p>得到降维后的数据。</p>
 <h2 id="算法推导"><a href="#算法推导" class="headerlink" title="算法推导"></a>算法推导</h2><hr>
 <h3 id="step-1："><a href="#step-1：" class="headerlink" title="step 1："></a>step 1：</h3><hr>
 <p>运用k近邻算法得到每个数据的k近邻点：</p>
-<p>$$N_i = KNN(x_i,k), N<em>i = [x</em>{1i}, …, x_{ki}]$$</p>
-<h3 id="step-2-求解权重系数矩阵"><a href="#step-2-求解权重系数矩阵" class="headerlink" title="step 2: 求解权重系数矩阵"></a>step 2: 求解权重系数矩阵</h3><hr>
+<script type="math/tex; mode=display">N_i = KNN(x_i,k), N_i = [x_{1i}, ..., x_{ki}]</script><h3 id="step-2-求解权重系数矩阵"><a href="#step-2-求解权重系数矩阵" class="headerlink" title="step 2: 求解权重系数矩阵"></a>step 2: 求解权重系数矩阵</h3><hr>
 <p>即求解：</p>
-<p>$$ \arg\min \limits<em>{W}\sum</em>{i=1}^{N} |x<em>i - \sum</em>{j=1}^{k}w<em>{ji}x</em>{ji}|^2, s.t. \sum_{j=1}^k$$</p>
-<p>在推导之前，我们首先统一下数据的矩阵表达形式</p>
+<script type="math/tex; mode=display">\arg\min \limits_{W}\sum_{i=1}^{N} \|x_i - \sum_{j=1}^{k}w_{ji}x_{ji}\|^2, s.t. \sum_{j=1}^k</script><p>在推导之前，我们首先统一下数据的矩阵表达形式</p>
 <p>　　输入：$X = [x_1, x_2, …, x_N], D\times N$</p>
 <p>　　权重：$w = [w_1, w_2, …, w_N], k\times N$</p>
 <p>　　</p>
-<p>$$\Phi(w)=\sum_{i=1}^{N} |x<em>i - \sum</em>{j=1}^{k}w<em>{ji}x</em>{ji}|^2$$<br>$$=\sum<em>{i=1}^{N} |\sum</em>{j=1}^k (x<em>i-x</em>{ji})w<em>{ji}|^2$$<br>$$=\sum</em>{i=1}^N |(X_i-N_i)w_i|^2, X_i =\underbrace {[x_i, …, x_i]}_k, N<em>i = [x</em>{1i}, …, x<em>{ki}]$$<br>$$= \sum</em>{i=1}^N w_i^T(X_i-N_i)^T(X_i-N_i)w_i$$<br>$let\ S_i = (X_i-N_i)^T(X_i-N<em>i)$ being the covariance matrix, then:<br>$$\Phi(w)=\sum</em>{i=1}^N w_i^T S_i w_i$$<br>拉格朗日乘子法：<br>$$L(w_i) = w_i^T S_i w_i + \lambda(w_i^T-1)$$<br>求导：<br>$$\frac{\partial L(w_i)}{\partial w_i} = 2S_iw_i+\lambda I = 0$$<br>$$w_i = \frac{S_i^{-1}I}{I^T S_i^{-1}I}$$<br>　　<br>　　就上述表达式而言，局部协方差矩阵$S_i$是个$k\times k$的矩阵，其分母其实是$S_i$的逆矩阵的所有元素之和，而其分子是$S_i$的逆矩阵对行求和后得到的列向量。</p>
+<script type="math/tex; mode=display">\Phi(w)=\sum_{i=1}^{N} \|x_i - \sum_{j=1}^{k}w_{ji}x_{ji}\|^2</script><script type="math/tex; mode=display">=\sum_{i=1}^{N} \|\sum_{j=1}^k (x_i-x_{ji})w_{ji}\|^2</script><script type="math/tex; mode=display">=\sum_{i=1}^N \|(X_i-N_i)w_i\|^2, X_i =\underbrace {[x_i, ..., x_i]}_k, N_i = [x_{1i}, ..., x_{ki}]</script><script type="math/tex; mode=display">= \sum_{i=1}^N w_i^T(X_i-N_i)^T(X_i-N_i)w_i</script><p>$let\ S_i = (X_i-N_i)^T(X_i-N_i)$ being the covariance matrix, then:</p>
+<script type="math/tex; mode=display">\Phi(w)=\sum_{i=1}^N w_i^T S_i w_i</script><p>拉格朗日乘子法：</p>
+<script type="math/tex; mode=display">L(w_i) = w_i^T S_i w_i + \lambda(w_i^T-1)</script><p>求导：</p>
+<script type="math/tex; mode=display">\frac{\partial L(w_i)}{\partial w_i} = 2S_iw_i+\lambda I = 0</script><script type="math/tex; mode=display">w_i = \frac{S_i^{-1}I}{I^T S_i^{-1}I}</script><p>　　<br>　　就上述表达式而言，局部协方差矩阵$S_i$是个$k\times k$的矩阵，其分母其实是$S_i$的逆矩阵的所有元素之和，而其分子是$S_i$的逆矩阵对行求和后得到的列向量。</p>
         
           <a class="article-more-a" href="/2017/09/29/降维打击之LLE算法/#more">more >></a>
         
@@ -1016,11 +1021,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">娱乐八卦</a>
+                <a href="javascript:void(0)" class="js-tag color5">英语学习</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">英语学习</a>
+                <a href="javascript:void(0)" class="js-tag color5">娱乐八卦</a>
               </li>
              
               <li class="article-tag-list-item">
