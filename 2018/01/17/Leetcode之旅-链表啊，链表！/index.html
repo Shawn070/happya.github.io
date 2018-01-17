@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.quanlion.com">
-  <title>Gap Gap Gap | 福尔摩狮的博客</title>
+  <title>Leetcode之旅|链表啊，链表！(1) | 福尔摩狮的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="从博客搭建以来，每更新一篇都觉得压力重重：好像不能胡说，不能乱写，不能不严谨，不能不科学。直到昨天博客因为我的失误崩溃了，才意识到：这是我的个人blog，其实我可以写任何我想记录的事物，哪怕很感性，哪怕不够有格调。毕竟，本来就是为了好玩，为了“迹录”，何必给自己太多条条框框呢？ 　　庆幸的是，今天把博客抢修回来了。在修补的间隙，和上司长谈了一番，也是一时没忍住。虽然说出来并没有让我轻松多少">
-<meta name="keywords" content="随笔">
+  <meta name="description" content="自从前两天刷了那道链表的题之后觉得很有意思，奇妙的数据结构哇咔咔 ~ ~ ~ 但毕竟不是科班出身，对它的一些操作非常不熟悉，每次被各种head,tail,pre,next指来指去的东西绕得晕头转向。嗯，熟能生巧，所以我最近专注于刷链表相关的题目啊哈哈 ~ ~ ~ 　　这篇博客回顾的题目是删除链表中重复元素的问题（链表均已排好序）： 　　基础版：只删除重复了的元素，即保证唯一性 （Leetcod">
+<meta name="keywords" content="Leetcode,随笔,Data Structure">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Gap Gap Gap">
-<meta property="og:url" content="http://www.quanlion.com/2018/01/16/Gap-Gap-Gap/index.html">
+<meta property="og:title" content="Leetcode之旅|链表啊，链表！(1)">
+<meta property="og:url" content="http://www.quanlion.com/2018/01/17/Leetcode之旅-链表啊，链表！/index.html">
 <meta property="og:site_name" content="福尔摩狮的博客">
-<meta property="og:description" content="从博客搭建以来，每更新一篇都觉得压力重重：好像不能胡说，不能乱写，不能不严谨，不能不科学。直到昨天博客因为我的失误崩溃了，才意识到：这是我的个人blog，其实我可以写任何我想记录的事物，哪怕很感性，哪怕不够有格调。毕竟，本来就是为了好玩，为了“迹录”，何必给自己太多条条框框呢？ 　　庆幸的是，今天把博客抢修回来了。在修补的间隙，和上司长谈了一番，也是一时没忍住。虽然说出来并没有让我轻松多少">
-<meta property="og:updated_time" content="2018-01-16T15:34:46.219Z">
+<meta property="og:description" content="自从前两天刷了那道链表的题之后觉得很有意思，奇妙的数据结构哇咔咔 ~ ~ ~ 但毕竟不是科班出身，对它的一些操作非常不熟悉，每次被各种head,tail,pre,next指来指去的东西绕得晕头转向。嗯，熟能生巧，所以我最近专注于刷链表相关的题目啊哈哈 ~ ~ ~ 　　这篇博客回顾的题目是删除链表中重复元素的问题（链表均已排好序）： 　　基础版：只删除重复了的元素，即保证唯一性 （Leetcod">
+<meta property="og:updated_time" content="2018-01-17T15:14:50.277Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Gap Gap Gap">
-<meta name="twitter:description" content="从博客搭建以来，每更新一篇都觉得压力重重：好像不能胡说，不能乱写，不能不严谨，不能不科学。直到昨天博客因为我的失误崩溃了，才意识到：这是我的个人blog，其实我可以写任何我想记录的事物，哪怕很感性，哪怕不够有格调。毕竟，本来就是为了好玩，为了“迹录”，何必给自己太多条条框框呢？ 　　庆幸的是，今天把博客抢修回来了。在修补的间隙，和上司长谈了一番，也是一时没忍住。虽然说出来并没有让我轻松多少">
+<meta name="twitter:title" content="Leetcode之旅|链表啊，链表！(1)">
+<meta name="twitter:description" content="自从前两天刷了那道链表的题之后觉得很有意思，奇妙的数据结构哇咔咔 ~ ~ ~ 但毕竟不是科班出身，对它的一些操作非常不熟悉，每次被各种head,tail,pre,next指来指去的东西绕得晕头转向。嗯，熟能生巧，所以我最近专注于刷链表相关的题目啊哈哈 ~ ~ ~ 　　这篇博客回顾的题目是删除链表中重复元素的问题（链表均已排好序）： 　　基础版：只删除重复了的元素，即保证唯一性 （Leetcod">
   
     <link rel="alternative" href="/atom.xml" title="福尔摩狮的博客" type="application/atom+xml">
   
@@ -164,31 +164,41 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Gap-Gap-Gap" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Leetcode之旅-链表啊，链表！" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Gap Gap Gap
+      Leetcode之旅|链表啊，链表！(1)
     </h1>
   
 
         
-        <a href="/2018/01/16/Gap-Gap-Gap/" class="archive-article-date">
-  	<time datetime="2018-01-16T14:59:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-16</time>
+        <a href="/2018/01/17/Leetcode之旅-链表啊，链表！/" class="archive-article-date">
+  	<time datetime="2018-01-17T14:12:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-17</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=32419802&auto=1&height=66"></iframe>
-
-<p>　　从博客搭建以来，每更新一篇都觉得压力重重：好像不能胡说，不能乱写，不能不严谨，不能不科学。直到昨天博客因为我的失误崩溃了，才意识到：这是我的个人blog，其实我可以写任何我想记录的事物，哪怕很感性，哪怕不够有格调。毕竟，本来就是为了好玩，为了“迹录”，何必给自己太多条条框框呢？</p>
-<p>　　庆幸的是，今天把博客抢修回来了。在修补的间隙，和上司长谈了一番，也是一时没忍住。虽然说出来并没有让我轻松多少，但也算是心平气和地收场。希望不后悔自己的决定，但愿在这之前我能为此努力。Gap Gap Gap year!</p>
-<p>　　总归是有舍才有得。其实这篇博客是为了测试添加音乐播放器的功能哈哈哈(所以这么言之无物),挑了首Por Una Cabeza (一步之遥)，不过因为版权保护，能生成外链播放的不多，这是我在不多的选择中挑出来比较好听的一个版本，听着能感受到tango的那种缠绵又对抗的挣扎感。</p>
+        <p>　　自从前两天刷了那道链表的题之后觉得很有意思，奇妙的数据结构哇咔咔 ~ ~ ~ 但毕竟不是科班出身，对它的一些操作非常不熟悉，每次被各种head,tail,pre,next指来指去的东西绕得晕头转向。嗯，熟能生巧，所以我最近专注于刷链表相关的题目啊哈哈 ~ ~ ~</p>
+<p>　　这篇博客回顾的题目是删除链表中重复元素的问题（链表均已排好序）：</p>
+<p>　　基础版：只删除重复了的元素，即保证唯一性 （<a href="https://leetcode.com/problems/remove-duplicates-from-sorted-list/" target="_blank" rel="noopener">Leetcode Problem 83</a> ）。</p>
+<p>　　进阶版：删除有重复出现过的元素，即如果元素重复了，就将其从链表中剔除 （<a href="https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii" target="_blank" rel="noopener">Leetcode Problem 82</a> ）。</p>
+<p>　　发现我的语言很苍白，还是看实例吧：</p>
+<p>　　基础包：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Given 1-&gt;2-&gt;3-&gt;3-&gt;4-&gt;4-&gt;5, return 1-&gt;2-&gt;5.</span><br><span class="line">Given 1-&gt;1-&gt;1-&gt;2-&gt;3, return 2-&gt;3.</span><br></pre></td></tr></table></figure>
+<p>　　升级包：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Given 1-&gt;2-&gt;3-&gt;3-&gt;4-&gt;4-&gt;5, return 1-&gt;2-&gt;5.</span><br><span class="line">Given 1-&gt;1-&gt;1-&gt;2-&gt;3, return 2-&gt;3.</span><br></pre></td></tr></table></figure>
+<p>　　基础版思路：对于基础包而言，我们只需要一个指针，即下面代码中的<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line">def deleteDuplicates(head):</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        :type head: ListNode</span><br><span class="line">        :rtype: ListNode</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        # 链表为空的特殊情况</span><br><span class="line">        if not head:</span><br><span class="line">            return head</span><br><span class="line">        # 当前节点初始化为表头</span><br><span class="line">        cur = head</span><br><span class="line">        </span><br><span class="line">        # 遍历，循环条件为当前节点和当前节点的后继不为空</span><br><span class="line">        while cur and cur.next:</span><br><span class="line">            # 如果当前节点值和其后继值相等，则将其后继改为后继的后继</span><br><span class="line">            if cur.val == cur.next.val:</span><br><span class="line">                cur.next = cur.next.next</span><br><span class="line">            # 如果不相等，则将当前节点更新</span><br><span class="line">            else:</span><br><span class="line">                cur = cur.next</span><br><span class="line">        return head</span><br></pre></td></tr></table></figure></p>
+ <a id="more"></a>
+<p>　　进阶版思路：和基础版相比，进阶版的难度体现在两个方面：第一，因为重复出现过的元素需要删除，所以表头可能会被修改（如第一次出现的元素就重复的情况）；第二，因为重复出现过的元素很随机，所以一个指针不够提供足够的信息，比如上述例子中的第一个，在将3和4删除后，得知道5的前驱是2。<br>　　对此，我的解决方案是：<br>　　１.　使用两个指针，一个用来指代当前节点(cur)，初始化为表头，另一个为前驱节点(pre)，可以在删除重复节点后，给下一个节点提供前驱信息，初始化为Null。<br>　　2.　从当前节点开始遍历链表，从简单的情况开始处理，即如果当前值不等于其后继值，那么非常lucky，这个节点不重复了，将前驱节点更新为当前节点，将当前节点更新为其后继节点，然后跳出本次循环，move on；<br>　　3.　如果相等呢？那我们就得顺着往下捋,即更新后继节点_next，直到不相等了，这时_next指向的是第一个不与前面节点重复的节点，而cur指向的是这批重复节点的第一个节点。那么这时要删除的话就有两种情况了:第一，如果重复段在表头，说明head要更新，更新为_next节点了，这时pre依旧指向Null，然后将cur更新为_next；第二，如果这批重复的是中间的批次，说明head不用更新了，但因为中间这批重复的全删了，所以pre的后继得更新为_next，和第一种情况一样，cur也要后移，即更新为_next。<br>　　代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">deleteDuplicates</span><span class="params">(head)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type head: ListNode</span></span><br><span class="line"><span class="string">        :rtype: ListNode</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> head:</span><br><span class="line">            <span class="keyword">return</span> head</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 两个指针：pre和cur</span></span><br><span class="line">        pre = <span class="keyword">None</span></span><br><span class="line">        cur = head</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 遍历所有节点</span></span><br><span class="line">        <span class="keyword">while</span> cur:</span><br><span class="line">            <span class="comment"># 一个临时指针指向cur的后继</span></span><br><span class="line">            _next = cur.next</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> _next:</span><br><span class="line">                <span class="keyword">return</span> head</span><br><span class="line">            </span><br><span class="line">            <span class="comment"># 如果两个值不相等，则将pre和cur都往后移</span></span><br><span class="line">            <span class="keyword">elif</span> cur.val != _next.val:</span><br><span class="line">                pre = cur</span><br><span class="line">                cur = _next</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            </span><br><span class="line">            <span class="comment"># 如果相等，则将_next一直捋到不重复为止</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">while</span> _next <span class="keyword">and</span> _next.val == cur.val:</span><br><span class="line">                    _next = _next.next</span><br><span class="line">                </span><br><span class="line">                <span class="comment"># 如果重复段在表头，则需要更新表头信息</span></span><br><span class="line">                <span class="keyword">if</span> cur == head:</span><br><span class="line">                    head = _next</span><br><span class="line">                <span class="comment"># 如果重复段在中间，则需要将pre的后继更新为_next</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    pre.next = _next</span><br><span class="line">                <span class="comment"># 继续遍历</span></span><br><span class="line">                cur = _next</span><br><span class="line">        <span class="keyword">return</span> head</span><br></pre></td></tr></table></figure>
+<p>　　测试：均已通过</p>
+<p>　　思考：<br>　　１.　基础版是用迭代法，“凡是迭代即可递归”，试试递归如何实现？<br>　　2.　进阶版是最优化的吗？可以逛逛discuss看是否还可进一步优化？</p>
 
       
 
@@ -233,7 +243,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Leetcode</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Data Structure</a>
         		</li>
       		
 		</ul>
@@ -289,7 +307,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://www.quanlion.com/2018/01/16/Gap-Gap-Gap/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://www.quanlion.com/2018/01/17/Leetcode之旅-链表啊，链表！/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -303,18 +321,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/01/17/Leetcode之旅-链表啊，链表！/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Leetcode之旅|链表啊，链表！(1)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/01/15/Leetcode之旅：数据结构之P25/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Leetcode之旅|P25：Reverse Nodes in k-Group</div>
+    <a href="/2018/01/16/Gap-Gap-Gap/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Gap Gap Gap</div>
       <i class="icon-circle-right"></i>
     </a>
   

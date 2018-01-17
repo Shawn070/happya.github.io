@@ -164,6 +164,99 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Leetcode之旅-链表啊，链表！" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/17/Leetcode之旅-链表啊，链表！/">Leetcode之旅|链表啊，链表！(1)</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/17/Leetcode之旅-链表啊，链表！/" class="archive-article-date">
+  	<time datetime="2018-01-17T14:12:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>　　自从前两天刷了那道链表的题之后觉得很有意思，奇妙的数据结构哇咔咔 ~ ~ ~ 但毕竟不是科班出身，对它的一些操作非常不熟悉，每次被各种head,tail,pre,next指来指去的东西绕得晕头转向。嗯，熟能生巧，所以我最近专注于刷链表相关的题目啊哈哈 ~ ~ ~</p>
+<p>　　这篇博客回顾的题目是删除链表中重复元素的问题（链表均已排好序）：</p>
+<p>　　基础版：只删除重复了的元素，即保证唯一性 （<a href="https://leetcode.com/problems/remove-duplicates-from-sorted-list/" target="_blank" rel="noopener">Leetcode Problem 83</a> ）。</p>
+<p>　　进阶版：删除有重复出现过的元素，即如果元素重复了，就将其从链表中剔除 （<a href="https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii" target="_blank" rel="noopener">Leetcode Problem 82</a> ）。</p>
+<p>　　发现我的语言很苍白，还是看实例吧：</p>
+<p>　　基础包：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Given 1-&gt;2-&gt;3-&gt;3-&gt;4-&gt;4-&gt;5, return 1-&gt;2-&gt;5.</span><br><span class="line">Given 1-&gt;1-&gt;1-&gt;2-&gt;3, return 2-&gt;3.</span><br></pre></td></tr></table></figure>
+<p>　　升级包：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Given 1-&gt;2-&gt;3-&gt;3-&gt;4-&gt;4-&gt;5, return 1-&gt;2-&gt;5.</span><br><span class="line">Given 1-&gt;1-&gt;1-&gt;2-&gt;3, return 2-&gt;3.</span><br></pre></td></tr></table></figure>
+<p>　　基础版思路：对于基础包而言，我们只需要一个指针，即下面代码中的<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line">def deleteDuplicates(head):</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        :type head: ListNode</span><br><span class="line">        :rtype: ListNode</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        # 链表为空的特殊情况</span><br><span class="line">        if not head:</span><br><span class="line">            return head</span><br><span class="line">        # 当前节点初始化为表头</span><br><span class="line">        cur = head</span><br><span class="line">        </span><br><span class="line">        # 遍历，循环条件为当前节点和当前节点的后继不为空</span><br><span class="line">        while cur and cur.next:</span><br><span class="line">            # 如果当前节点值和其后继值相等，则将其后继改为后继的后继</span><br><span class="line">            if cur.val == cur.next.val:</span><br><span class="line">                cur.next = cur.next.next</span><br><span class="line">            # 如果不相等，则将当前节点更新</span><br><span class="line">            else:</span><br><span class="line">                cur = cur.next</span><br><span class="line">        return head</span><br></pre></td></tr></table></figure></p>
+        
+          <a class="article-more-a" href="/2018/01/17/Leetcode之旅-链表啊，链表！/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Leetcode</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Data Structure</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/17/Leetcode之旅-链表啊，链表！/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Gap-Gap-Gap" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -871,7 +964,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/20/Brainy-is-the-new-sexy/">Leetcode之旅|Brainy is the new sexy|P74：Sort colors</a>
+      <a class="article-title" href="/2017/09/20/Brainy-is-the-new-sexy/">Leetcode之旅|Brainy is the new sexy</a>
     </h1>
   
 
@@ -931,7 +1024,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/leetcode//" class="article-tag-list-link color4">leetcode</a>
+        			<a href="/categories/Leetcode//" class="article-tag-list-link color4">Leetcode</a>
         		</li>
       		
 		</ul>
@@ -1092,11 +1185,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Data Structure</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color5">Data Structure</a>
               </li>
              
               <li class="article-tag-list-item">
