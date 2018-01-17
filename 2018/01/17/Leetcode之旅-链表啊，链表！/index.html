@@ -9,13 +9,13 @@
   <title>Leetcode之旅|链表啊，链表！(1) | 福尔摩狮的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="自从前两天刷了那道链表的题之后觉得很有意思，奇妙的数据结构哇咔咔 ~ ~ ~ 但毕竟不是科班出身，对它的一些操作非常不熟悉，每次被各种head,tail,pre,next指来指去的东西绕得晕头转向。嗯，熟能生巧，所以我最近专注于刷链表相关的题目啊哈哈 ~ ~ ~ 　　这篇博客回顾的题目是删除链表中重复元素的问题（链表均已排好序）： 　　基础版：只删除重复了的元素，即保证唯一性 （Leetcod">
-<meta name="keywords" content="随笔,Leetcode,Data Structure">
+<meta name="keywords" content="Leetcode,随笔,Data Structure">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Leetcode之旅|链表啊，链表！(1)">
 <meta property="og:url" content="http://www.quanlion.com/2018/01/17/Leetcode之旅-链表啊，链表！/index.html">
 <meta property="og:site_name" content="福尔摩狮的博客">
 <meta property="og:description" content="自从前两天刷了那道链表的题之后觉得很有意思，奇妙的数据结构哇咔咔 ~ ~ ~ 但毕竟不是科班出身，对它的一些操作非常不熟悉，每次被各种head,tail,pre,next指来指去的东西绕得晕头转向。嗯，熟能生巧，所以我最近专注于刷链表相关的题目啊哈哈 ~ ~ ~ 　　这篇博客回顾的题目是删除链表中重复元素的问题（链表均已排好序）： 　　基础版：只删除重复了的元素，即保证唯一性 （Leetcod">
-<meta property="og:updated_time" content="2018-01-17T15:20:10.567Z">
+<meta property="og:updated_time" content="2018-01-17T15:23:28.201Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode之旅|链表啊，链表！(1)">
 <meta name="twitter:description" content="自从前两天刷了那道链表的题之后觉得很有意思，奇妙的数据结构哇咔咔 ~ ~ ~ 但毕竟不是科班出身，对它的一些操作非常不熟悉，每次被各种head,tail,pre,next指来指去的东西绕得晕头转向。嗯，熟能生巧，所以我最近专注于刷链表相关的题目啊哈哈 ~ ~ ~ 　　这篇博客回顾的题目是删除链表中重复元素的问题（链表均已排好序）： 　　基础版：只删除重复了的元素，即保证唯一性 （Leetcod">
@@ -193,7 +193,7 @@
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Given 1-&gt;2-&gt;3-&gt;3-&gt;4-&gt;4-&gt;5, return 1-&gt;2-&gt;5.</span><br><span class="line">Given 1-&gt;1-&gt;1-&gt;2-&gt;3, return 2-&gt;3.</span><br></pre></td></tr></table></figure>
 <p>　　升级包：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Given 1-&gt;2-&gt;3-&gt;3-&gt;4-&gt;4-&gt;5, return 1-&gt;2-&gt;5.</span><br><span class="line">Given 1-&gt;1-&gt;1-&gt;2-&gt;3, return 2-&gt;3.</span><br></pre></td></tr></table></figure>
-<p>　　基础版思路：对于基础包而言，我们只需要一个指针，即下面代码中的<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">```python</span><br><span class="line">def deleteDuplicates(head):</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        :type head: ListNode</span><br><span class="line">        :rtype: ListNode</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        # 链表为空的特殊情况</span><br><span class="line">        if not head:</span><br><span class="line">            return head</span><br><span class="line">        # 当前节点初始化为表头</span><br><span class="line">        cur = head</span><br><span class="line">        </span><br><span class="line">        # 遍历，循环条件为当前节点和当前节点的后继不为空</span><br><span class="line">        while cur and cur.next:</span><br><span class="line">            # 如果当前节点值和其后继值相等，则将其后继改为后继的后继</span><br><span class="line">            if cur.val == cur.next.val:</span><br><span class="line">                cur.next = cur.next.next</span><br><span class="line">            # 如果不相等，则将当前节点更新</span><br><span class="line">            else:</span><br><span class="line">                cur = cur.next</span><br><span class="line">        return head</span><br></pre></td></tr></table></figure></p>
+<p>　　基础版思路：对于基础包而言，我们只需要一个指针，即下面代码中的<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">　　代码如下：</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line">def deleteDuplicates(head):</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        :type head: ListNode</span><br><span class="line">        :rtype: ListNode</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        # 链表为空的特殊情况</span><br><span class="line">        if not head:</span><br><span class="line">            return head</span><br><span class="line">        # 当前节点初始化为表头</span><br><span class="line">        cur = head</span><br><span class="line">        </span><br><span class="line">        # 遍历，循环条件为当前节点和当前节点的后继不为空</span><br><span class="line">        while cur and cur.next:</span><br><span class="line">            # 如果当前节点值和其后继值相等，则将其后继改为后继的后继</span><br><span class="line">            if cur.val == cur.next.val:</span><br><span class="line">                cur.next = cur.next.next</span><br><span class="line">            # 如果不相等，则将当前节点更新</span><br><span class="line">            else:</span><br><span class="line">                cur = cur.next</span><br><span class="line">        return head</span><br></pre></td></tr></table></figure></p>
  <a id="more"></a>
 <p>　　进阶版思路：和基础版相比，进阶版的难度体现在两个方面：第一，因为重复出现过的元素需要删除，所以表头可能会被修改（如第一次出现的元素就重复的情况）；第二，因为重复出现过的元素很随机，所以一个指针不够提供足够的信息，比如上述例子中的第一个，在将3和4删除后，得知道5的前驱是2。<br>　　对此，我的解决方案是：<br>　　１.　使用两个指针，一个用来指代当前节点(cur)，初始化为表头，另一个为前驱节点(pre)，可以在删除重复节点后，给下一个节点提供前驱信息，初始化为Null。<br>　　2.　从当前节点开始遍历链表，从简单的情况开始处理，即如果当前值不等于其后继值，那么非常lucky，这个节点不重复了，将前驱节点更新为当前节点，将当前节点更新为其后继节点，然后跳出本次循环，move on；<br>　　3.　如果相等呢？那我们就得顺着往下捋,即更新后继节点_next，直到不相等了，这时_next指向的是第一个不与前面节点重复的节点，而cur指向的是这批重复节点的第一个节点。那么这时要删除的话就有两种情况了:第一，如果重复段在表头，说明head要更新，更新为_next节点了，这时pre依旧指向Null，然后将cur更新为_next；第二，如果这批重复的是中间的批次，说明head不用更新了，但因为中间这批重复的全删了，所以pre的后继得更新为_next，和第一种情况一样，cur也要后移，即更新为_next。<br>　　代码如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">deleteDuplicates</span><span class="params">(head)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type head: ListNode</span></span><br><span class="line"><span class="string">        :rtype: ListNode</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> head:</span><br><span class="line">            <span class="keyword">return</span> head</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 两个指针：pre和cur</span></span><br><span class="line">        pre = <span class="keyword">None</span></span><br><span class="line">        cur = head</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 遍历所有节点</span></span><br><span class="line">        <span class="keyword">while</span> cur:</span><br><span class="line">            <span class="comment"># 一个临时指针指向cur的后继</span></span><br><span class="line">            _next = cur.next</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> _next:</span><br><span class="line">                <span class="keyword">return</span> head</span><br><span class="line">            </span><br><span class="line">            <span class="comment"># 如果两个值不相等，则将pre和cur都往后移</span></span><br><span class="line">            <span class="keyword">elif</span> cur.val != _next.val:</span><br><span class="line">                pre = cur</span><br><span class="line">                cur = _next</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            </span><br><span class="line">            <span class="comment"># 如果相等，则将_next一直捋到不重复为止</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">while</span> _next <span class="keyword">and</span> _next.val == cur.val:</span><br><span class="line">                    _next = _next.next</span><br><span class="line">                </span><br><span class="line">                <span class="comment"># 如果重复段在表头，则需要更新表头信息</span></span><br><span class="line">                <span class="keyword">if</span> cur == head:</span><br><span class="line">                    head = _next</span><br><span class="line">                <span class="comment"># 如果重复段在中间，则需要将pre的后继更新为_next</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    pre.next = _next</span><br><span class="line">                <span class="comment"># 继续遍历</span></span><br><span class="line">                cur = _next</span><br><span class="line">        <span class="keyword">return</span> head</span><br></pre></td></tr></table></figure>
@@ -243,11 +243,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Leetcode</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Leetcode</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -486,19 +486,19 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Data Structure</a>
+                <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Data Structure</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -510,11 +510,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">英语学习</a>
+                <a href="javascript:void(0)" class="js-tag color5">娱乐八卦</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">娱乐八卦</a>
+                <a href="javascript:void(0)" class="js-tag color5">英语学习</a>
               </li>
              
               <li class="article-tag-list-item">
