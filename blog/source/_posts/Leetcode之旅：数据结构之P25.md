@@ -1,10 +1,12 @@
 ---
-title: Leetcode之旅|P25：Reverse Nodes in k-Group
+title: Leetcode之旅|链表啊，链表 (0)
 date: 2018-01-15 21:06:37
 tags: 
     - Leetcode
     - algorithm
     - Data Structure
+catogories:
+    - Leetcode
 mathjax: true
 ---
 
@@ -65,10 +67,10 @@ def formList(nums):
 # 这里是为了后面调试方便
 def showList(head):
     res = []
-    
-    while head:
-        res.append(head.val)
-        head = head.next
+    cur = head
+    while cur:
+        res.append(cur.val)
+        cur = cur.next
     return res
 ```
  <!-- more -->
@@ -156,10 +158,10 @@ def reverseKGroup(head, k):
 　　测试：
 ```python
 a = formList([1,2,3,4,5,6,7,8,9])
-b = a
+b = formList([1,2,3,4,5,6,7,8,9])
 print('a = b = ', showList(a))
 res_a = reverseKGroup(a,3)
-res_b = reverseKGroup(a,4)
+res_b = reverseKGroup(b,4)
 print('res_a = ',showList(res_a))
 print('res_b = ',showList(res_b))
 ```
@@ -167,8 +169,8 @@ print('res_b = ',showList(res_b))
 　　输出：
 ```python
 a = b =  [1, 2, 3, 4, 5, 6, 7, 8, 9]
-res_a =  [3, 2, 1, 9, 8, 7]
-res_b =  [4, 5, 6, 1, 9, 8, 7]
+res_a =  [3, 2, 1, 6, 5, 4, 9, 8, 7]
+res_b =  [4, 3, 2, 1, 8, 7, 6, 5, 9]
 ```
 
 　　通过!!!
