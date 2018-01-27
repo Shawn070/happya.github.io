@@ -1,5 +1,5 @@
 ---
-title: Leetcode之旅|链表啊，链表 (0)
+title: Leetcode之旅|链表啊，链表！ (0)
 date: 2018-01-15 21:06:37
 tags: 
     - Leetcode
