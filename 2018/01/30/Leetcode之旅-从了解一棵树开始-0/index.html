@@ -6,21 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.quanlion.com">
-  <title>最近英语学习的一点心得 | 福尔摩狮的博客</title>
+  <title>Leetcode之旅|从了解一棵树开始(0) | 福尔摩狮的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="最近因为工作后换了环境，发现平时很少用英语，有点担心会在需要点亮英语技能树的时候才发现“技到用时方恨少”，所以决定接受知乎的安利，拜读一下《Word Power Made Easy》这本传说中的神书。  由于最近刚写了篇还算比较长的review，给了同事一种我英语很好的错觉，但其实我很惭愧，因为我英语其实并没有那么好，很多时候需要写或者需要说的时候都发现自己很束手无策。尤其是目前这本书看了前六章，">
-<meta name="keywords" content="随笔,英语学习,读书笔记">
+  <meta name="description" content="今天心情特别郁闷。　　没想到会有人觉得我给港科大丢脸了，我简直是震惊。　　生活不顺已经很艰难，这句话简直字字诛心。　　我能在如此逆境中保持不断学习的状态，在英语并不差的情况下还想着变得更好，在有马甲线的情况下还能自制锻炼，我哪里差呢？最多就是我没能发出paper。我花了很久的时间让自己相信paper这事其实并不是我不够聪明，也不是不够努力，花费如此气力来承认自己的能力与价值，不能因为别人随随便">
+<meta name="keywords" content="Leetcode,随笔,Data Structure,Algorithm,Tree">
 <meta property="og:type" content="article">
-<meta property="og:title" content="最近英语学习的一点心得">
-<meta property="og:url" content="http://www.quanlion.com/2017/09/21/最近英语学习的一点心得/index.html">
+<meta property="og:title" content="Leetcode之旅|从了解一棵树开始(0)">
+<meta property="og:url" content="http://www.quanlion.com/2018/01/30/Leetcode之旅-从了解一棵树开始-0/index.html">
 <meta property="og:site_name" content="福尔摩狮的博客">
-<meta property="og:description" content="最近因为工作后换了环境，发现平时很少用英语，有点担心会在需要点亮英语技能树的时候才发现“技到用时方恨少”，所以决定接受知乎的安利，拜读一下《Word Power Made Easy》这本传说中的神书。  由于最近刚写了篇还算比较长的review，给了同事一种我英语很好的错觉，但其实我很惭愧，因为我英语其实并没有那么好，很多时候需要写或者需要说的时候都发现自己很束手无策。尤其是目前这本书看了前六章，">
-<meta property="og:image" content="https://img3.doubanio.com/lpic/s6525336.jpg">
-<meta property="og:updated_time" content="2018-01-16T03:43:02.894Z">
+<meta property="og:description" content="今天心情特别郁闷。　　没想到会有人觉得我给港科大丢脸了，我简直是震惊。　　生活不顺已经很艰难，这句话简直字字诛心。　　我能在如此逆境中保持不断学习的状态，在英语并不差的情况下还想着变得更好，在有马甲线的情况下还能自制锻炼，我哪里差呢？最多就是我没能发出paper。我花了很久的时间让自己相信paper这事其实并不是我不够聪明，也不是不够努力，花费如此气力来承认自己的能力与价值，不能因为别人随随便">
+<meta property="og:updated_time" content="2018-01-29T18:07:43.085Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="最近英语学习的一点心得">
-<meta name="twitter:description" content="最近因为工作后换了环境，发现平时很少用英语，有点担心会在需要点亮英语技能树的时候才发现“技到用时方恨少”，所以决定接受知乎的安利，拜读一下《Word Power Made Easy》这本传说中的神书。  由于最近刚写了篇还算比较长的review，给了同事一种我英语很好的错觉，但其实我很惭愧，因为我英语其实并没有那么好，很多时候需要写或者需要说的时候都发现自己很束手无策。尤其是目前这本书看了前六章，">
-<meta name="twitter:image" content="https://img3.doubanio.com/lpic/s6525336.jpg">
+<meta name="twitter:title" content="Leetcode之旅|从了解一棵树开始(0)">
+<meta name="twitter:description" content="今天心情特别郁闷。　　没想到会有人觉得我给港科大丢脸了，我简直是震惊。　　生活不顺已经很艰难，这句话简直字字诛心。　　我能在如此逆境中保持不断学习的状态，在英语并不差的情况下还想着变得更好，在有马甲线的情况下还能自制锻炼，我哪里差呢？最多就是我没能发出paper。我花了很久的时间让自己相信paper这事其实并不是我不够聪明，也不是不够努力，花费如此气力来承认自己的能力与价值，不能因为别人随随便">
   
     <link rel="alternative" href="/atom.xml" title="福尔摩狮的博客" type="application/atom+xml">
   
@@ -166,62 +164,65 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-最近英语学习的一点心得" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Leetcode之旅-从了解一棵树开始-0" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      最近英语学习的一点心得
+      Leetcode之旅|从了解一棵树开始(0)
     </h1>
   
 
         
-        <a href="/2017/09/21/最近英语学习的一点心得/" class="archive-article-date">
-  	<time datetime="2017-09-21T13:26:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-21</time>
+        <a href="/2018/01/30/Leetcode之旅-从了解一棵树开始-0/" class="archive-article-date">
+  	<time datetime="2018-01-29T16:32:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-30</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>最近因为工作后换了环境，发现平时很少用英语，有点担心会在需要点亮英语技能树的时候才发现“技到用时方恨少”，所以决定接受知乎的安利，拜读一下《Word Power Made Easy》这本传说中的神书。</p>
-<p><img src="https://img3.doubanio.com/lpic/s6525336.jpg" alt="祭出神书封面"></p>
-<p>由于最近刚写了篇还算比较长的review，给了同事一种我英语很好的错觉，但其实我很惭愧，因为我英语其实并没有那么好，很多时候需要写或者需要说的时候都发现自己很束手无策。尤其是目前这本书看了前六章，觉得触动很大。</p>
+        <p>　　今天心情特别郁闷。<br>　　没想到会有人觉得我给港科大丢脸了，我简直是震惊。<br>　　生活不顺已经很艰难，这句话简直字字诛心。<br>　　我能在如此逆境中保持不断学习的状态，在英语并不差的情况下还想着变得更好，在有马甲线的情况下还能自制锻炼，我哪里差呢？最多就是我没能发出paper。我花了很久的时间让自己相信paper这事其实并不是我不够聪明，也不是不够努力，花费如此气力来承认自己的能力与价值，不能因为别人随随便便的一句话就坍塌。<br>　　就像《无问西东》里说的：要坚信自己的珍贵。</p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p> 　　从这周开始做了点tree相关的题，发现递归和深度/广度优先搜索(DFS/BFS)是绕不开的话题。对于递归，我还是没能熟练操作，现在只能通过半参考别人的解答半练习的状态来学习这类题目的解法。</p>
+<p> 　　今天的主题的Path Sum，就是给出一棵二叉树，一个target数值，找出节点值之和等于target的路径。按照难易程度，分为如下几个level:</p>
+<blockquote>
+<p>　　- 1.0版本：给出一棵树，一个target值，从根节点(root)开始到叶子结点(leaves)结束，如果存在一个路径，位于该路径的所有节点的数值之和等于target，说明path存在，返回True;反之，返回False。<br>　　- 2.0版本：在1.0的基础上，找出所有满足的路径，并将每个符合要求的路径的节点值以列表形式返回。<br>　　- 3.0版本： 在上述两个版本的基础上，不限于从root节点开始，也不限于到leaves节点结束，找出所有满足要求的路径数。</p>
+</blockquote>
+<p> 　　比如，对如下一棵二叉树和target = 22：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">      <span class="number">5</span></span><br><span class="line">     / \</span><br><span class="line">    <span class="number">4</span>   <span class="number">8</span></span><br><span class="line">   /   / \</span><br><span class="line">  <span class="number">11</span>  <span class="number">13</span>  <span class="number">4</span></span><br><span class="line"> /  \      \</span><br><span class="line"><span class="number">7</span>    <span class="number">2</span>      <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>　　- 1.0版本：返回True，因为存在root-to-leaf路径5-&gt;4-&gt;11-&gt;2，其节点值之和等于target=22。<br>　　- 2.0版本：返回[[5,4,11,2],[5,8,4,5]]。<br>　　- 3.0版本：返回3，因为存在三条路径：<br>　　1. 5-&gt;4-&gt;11-&gt;2;<br>　　2. 4-&gt;11-&gt;7;<br>　　3. 8-&gt;13。
+　　</p>
+</blockquote>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><h3 id="1-0版本"><a href="#1-0版本" class="headerlink" title="1.0版本"></a>1.0版本</h3><p>　　从二叉树的形状就可以看出，和tree相关的题目会很直观地想到递归，因为从根节点开始，以它的左节点或者右节点(存在且不为leaf)为根节点的话依然是一棵树。同时，这道题也很容易让人想到leetcode的入门第一题：twosum。所以这道题我们可以按照如下思路递归：</p>
+<blockquote>
+<p>　　- 根节点为null：返回False;<br>　　- 根节点不为null且存在左/右:递归调用hasPathSum函数，其中传递参数root改为root.left和root.right，target改为target-root.val,左右的返回值逻辑为or (递推关系);<br>　　- 如果根节点值等于target值，说明路径存在，返回True(出口条件)。</p>
+</blockquote>
+<p>　　代码如下：</p>
+<h3 id="1-0版本代码"><a href="#1-0版本代码" class="headerlink" title="1.0版本代码"></a>1.0版本代码</h3><hr>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"># class TreeNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.left = None</span></span><br><span class="line"><span class="comment">#         self.right = None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">hasPathSum</span><span class="params">(self, root, target)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type root: TreeNode</span></span><br><span class="line"><span class="string">        :type sum: int</span></span><br><span class="line"><span class="string">        :rtype: bool</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        <span class="keyword">if</span> root.left <span class="keyword">or</span> root.right:</span><br><span class="line">            <span class="keyword">return</span> self.hasPathSum(root.left,target-root.val) <span class="keyword">or</span> self.hasPathSum(target.right,sum-root.val)</span><br><span class="line">        <span class="keyword">return</span> root.val==sum</span><br></pre></td></tr></table></figure>
+<h3 id="2-0版本"><a href="#2-0版本" class="headerlink" title="2.0版本"></a>2.0版本</h3><p>　　这道题我一开始就否认了直接递归，觉得很难写，后来看到discuss说是用DFS，觉得挺好。所以这套题我思路一直是没捋顺的，下面的解析思路和代码希望我能学习并运用好。<br>　　简而言之，利用DFS，所以本质上还是递归的，递归思路如下：</p>
+<blockquote>
+<ul>
+<li>设定全局变量res以存储结果，而且dfs函数是没有返回值的，只是在递归调用过程中对res进行修改，最后在主程序中返回。这种情况其实可以直接在主函数里将dfs写成方法。另外，只在根节点不为null的时候，dfs函数会有操作。</li>
+<li>dfs传递的参数有root,target,path,res,其中root,target会在递推关系中更改，而path值会记录访问路径。</li>
+<li>当节点值等于target且它没有左右孩子时(说明为leaf)，说明该路径满足条件，则将该节点加入路径，而该路径加入res。</li>
+<li>递推关系：root-&gt;root.left/root.right,target-&gt;target-root.val，path-&gt;path+[root.val],res按实际情况决定是否更新。</li>
+</ul>
+</blockquote>
 <a id="more"></a>
-<h2 id="1-词根词缀"><a href="#1-词根词缀" class="headerlink" title="1. 词根词缀"></a>1. 词根词缀</h2><p>其实之前觉得靠词根词缀法记忆单词很扯，因为很多词根词缀的在不同词的样子都是不同的，而有些单词里看着像词根词缀的其实又不是词根词缀（有种freestyle的感觉。。。）。但看了这本书，因为它介绍了词根的来源，原来大部分词根其实都来自于希腊语或者拉丁语，举个栗子，calligraphy，来源于希腊语kallo(beauty)和graphein(to write),合在一起就是beautiful writing(书法)的意思。再比如我们很熟悉的disaster，就是来源于astron,意思是star，古人认为星星主宰着人类的命运，而前缀dis-这里的意思是against的意思，合起来就是不幸，灾难的意思 （没想到这么个简单的词汇起源是这个）。</p>
-<p>所以看了这些词汇的起源确实在平时的阅读中会想更多，比如读一篇文章，就会发现，啊这个词原来是来源于这个词汇，而另一个不认识的词汇可能根据知道的某些词根词缀和适当的变型，大概也能猜出是什么意思。所以，平时读些词根起源还是挺有意思的，就当学单词的偏旁部首了，而且还能学习一些有趣的小故事，比如，Bellona是罗马神话里的女战神，所以bell-现在作为词根就代表了“战争”的意思。</p>
-<h2 id="2-语法"><a href="#2-语法" class="headerlink" title="2. 语法"></a>2. 语法</h2><p>语法部分目前看的还不多，但有句话印象很深刻：</p>
-<blockquote>
-<p>Gramma follows the speech habits of the majority of educated people—not the other way around.</p>
-</blockquote>
-<p>有人说，其实在口语中，和native speaker交流其实对方并不关注我们的语法是否正确，但其实错得太离谱也是会影响表达的；而平时的英语写作中，语法的作用可能是为了让我们更精准地传达我们的想法。有点时候，less than more，越精简可能越有力量。同时，语法也不是一成不变的，但总是educated people说了算（知识就是力量啊。。。）。</p>
-<h2 id="3-表达"><a href="#3-表达" class="headerlink" title="3. 表达"></a>3. 表达</h2><p>这点其实是最近听了一些歌剧和Keats的诗歌是时候发现的。不需要多说什么，随便举几个例子，就能感受到英语的美感：</p>
-<p>比如歌剧《基督山伯爵》中的：</p>
-<blockquote>
-<p>When you lift your gaze, </p>
-<p>I will be like a shimmer of one small star, </p>
-<p>out there, </p>
-<p>shining everywhere.</p>
-<p>———《I will be there》 From 《The Count Of Monte Cristo》   </p>
-</blockquote>
-<p>再比如歌剧《日落大道》的：</p>
-<blockquote>
-<p>With one look I put words to shame,</p>
-<p>Just one look sets the screen aflame</p>
-<p>Silent Music starts to play</p>
-<p>One tear in my eye makes the whole world cry</p>
-<p>with one look they’ll forgive the past.</p>
-<p>———《With one look》 From 《Sunset Boulevard》</p>
-</blockquote>
-<p>再比如情圣济慈的酥耳朵情话（由抖森来读感觉听着耳朵要怀孕）：</p>
-<blockquote>
-<p>I want a brighter word whan bright, a fairer word an fair.</p>
-<p>I almost wish we were butterflies and lived but three summer days. Three such days with you I could fill with more delight than 50 common years could ever contain.</p>
-<p>  ——-Keats</p>
-</blockquote>
-<h2 id="4-小结"><a href="#4-小结" class="headerlink" title="4. 小结"></a>4. 小结</h2><p>可见学英语还是很有意思且必要呀，嗯，加油。</p>
+<p>　　代码如下：</p>
+<h3 id="2-0版本代码"><a href="#2-0版本代码" class="headerlink" title="2.0版本代码"></a>2.0版本代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">pathSum1</span><span class="params">(self, root, target)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type root: TreeNode</span></span><br><span class="line"><span class="string">        :type sum: int</span></span><br><span class="line"><span class="string">        :rtype: List[List[int]]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        res = []</span><br><span class="line">        self.dfs(root,target,[],res)</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">dfs</span><span class="params">(self,root,target,path,res)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> root:</span><br><span class="line">            <span class="keyword">if</span> root.val==target <span class="keyword">and</span> <span class="keyword">not</span> root.left <span class="keyword">and</span> <span class="keyword">not</span> root.right:</span><br><span class="line">                res.append(path+[root.val])</span><br><span class="line">            self.dfs(root.left,target-root.val,path+[root.val],res)</span><br><span class="line">            self.dfs(root.right,target-root.val,path+[root.val],res)</span><br></pre></td></tr></table></figure>
+<p>　　记得当时学算法课的时候，dfs和bfs都是通过stack实现的，所以我们可以不需要递归，而是借助stack来实现。这样算法的效率明显提升(时间缩短20%)。<br>　　为啥stack可以实现呢？因为我们用堆栈不仅记录的节点，同时记录了当前节点的历史访问路径。而当我们每访问一个节点，只需要将其入栈，且在其之前访问过的节点已经计入了path。而当检验路径是否满足需求时，节点和以该节点为终点的路径会出栈。如果符合，则纳入res；如果不符合，则继续往下走(深度优先)。<br>　　发现这段写得不太好，可能是因为我理解得还不够透彻，接下来这个部分要加强练习。</p>
+<h3 id="2-0-stack代码"><a href="#2-0-stack代码" class="headerlink" title="2.0 stack代码"></a>2.0 stack代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">pathSum2</span><span class="params">(self, root, target)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type root: TreeNode</span></span><br><span class="line"><span class="string">        :type sum: int</span></span><br><span class="line"><span class="string">        :rtype: List[List[int]]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        res = []</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 用stack记录当前根节点，和值，以及路径</span></span><br><span class="line">        stack = [(root,root.val,[root.val])]</span><br><span class="line">        <span class="keyword">while</span> stack:</span><br><span class="line">            cur, cur_sum,cur_path = stack.pop()</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> cur.left <span class="keyword">and</span> <span class="keyword">not</span> cur.right <span class="keyword">and</span> cur_sum==target:</span><br><span class="line">                res.append(cur_path)</span><br><span class="line">            <span class="keyword">if</span> cur.left:</span><br><span class="line">                stack.append((cur.left,cur_sum+cur.left.val,cur_path+[cur.left.val]))</span><br><span class="line">            <span class="keyword">if</span> cur.right:</span><br><span class="line">                stack.append((cur.right,cur_sum+cur.right.val,cur_path+[cur.right.val]))</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+<h3 id="3-0版本"><a href="#3-0版本" class="headerlink" title="3.0版本"></a>3.0版本</h3><p>　　3.0版本很有意思，竟然是easy级别的，但我用自己想到的方法跑太慢了，时间复杂度感觉应该是$O(N^2)$，所以跑了将近1s，果不其然是垫底级别的。后来看到别人的dfs方法时间瞬间缩短到了95ms，应该是hash的作用吧(小白不确定是不是这个原因？)。<br>　　先来看&gt; 1000 ms的解法：运用了1.0版本的找路径的方法，不过因为现在不限于是root-to-leaf，所以得遍历所有的节点将其作为root，找到即计数加1。</p>
+<h3 id="3-0-慢速版代码"><a href="#3-0-慢速版代码" class="headerlink" title="3.0 慢速版代码"></a>3.0 慢速版代码</h3><hr>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">pathSum3</span><span class="params">(self, root, target)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type root: TreeNode</span></span><br><span class="line"><span class="string">        :type sum: int</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> root:</span><br><span class="line">            <span class="keyword">return</span> self.hasPathSum(root,s)+self.pathSum(root.left,s)+self.pathSum(root.right,s)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">            </span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">hasPathSum</span><span class="params">(self,root,target)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> root:</span><br><span class="line">            <span class="keyword">return</span> int(root.val==s)+self.hasPathSum(root.left,s-root.val)+self.hasPathSum(root.right,s-root.val)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<p>　　加速版解法很有意思，采用的字典dict这一数据结构，用来存储当前访问路劲节点的和值。判断的方法也机智(真是没想到)，即将每次采集到的和值减去target，如果这个键值存在，说明该键值存储的路径的终点到目前节点的”距离”即为target (再一次体会到智商被虐的痛楚)。<br>　　这版本解法的另一特点是运用dfs，可见以后解题得形成这种思维习惯：什么样类型的问题可以化为dfs的问题？</p>
+<h3 id="3-0加速版代码"><a href="#3-0加速版代码" class="headerlink" title="3.0加速版代码"></a>3.0加速版代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">pathSum4</span><span class="params">(self, root, target)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type root: TreeNode</span></span><br><span class="line"><span class="string">        :type sum: int</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="comment"># 属性值，记录符合要求的路径数目，可以在dfs中更改</span></span><br><span class="line">        self.count = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 记录已访问的路径的和值</span></span><br><span class="line">        <span class="comment"># 键值不存在或0表示不曾出现，为1表示出现过</span></span><br><span class="line">        <span class="comment"># 只有0和1两个值(暂时不明白这么说是否正确)</span></span><br><span class="line">        dic = &#123;<span class="number">0</span>:<span class="number">1</span>&#125;</span><br><span class="line">        self.dfs(root,s,<span class="number">0</span>,dic)</span><br><span class="line">        <span class="keyword">return</span> self.count</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># dfs的四个参数：</span></span><br><span class="line">    <span class="comment"># node:当前访问节点</span></span><br><span class="line">    <span class="comment"># target：目标值</span></span><br><span class="line">    <span class="comment"># cur_sum：当前路径和值</span></span><br><span class="line">    <span class="comment"># dic:路径和值字典</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">dfs</span><span class="params">(self,node,target,cur_sum,dic)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> node:</span><br><span class="line">            <span class="comment"># 上一轮和值与当前节点值相加更新为此轮和值</span></span><br><span class="line">            cur_sum += node.val</span><br><span class="line">            <span class="comment"># 如果存在与此轮和值“距离”为target的键值，count+1</span></span><br><span class="line">            self.count += dic.get(cur_sum-target,<span class="number">0</span>)</span><br><span class="line">            <span class="comment"># 将此轮和值存入字典，次数加1</span></span><br><span class="line">            dic[cur_sum] = dic.get(cur_sum,<span class="number">0</span>)+<span class="number">1</span>  </span><br><span class="line">            <span class="comment"># 左右孩子递归</span></span><br><span class="line">            self.dfs(node.left,s,cur_sum,dic)</span><br><span class="line">            self.dfs(node.right,s,cur_sum,dic)</span><br><span class="line">            <span class="comment"># 递归结束后此轮和值次数清空，因为要开始新的路径记录和判断了</span></span><br><span class="line">            dic[cur_sum]-=<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>　　太虐了！！！不过我感觉为了熟练操作二叉树，首先应该熟悉的是操作这类数据结构的方法，目前我理解的主要是递归和DFS/BFS，所以对应的应该对使用stack(可能还有dic)都能很熟悉，因为很多时候使用stack会出现逻辑衔接不上或者出口甚至是入口条件找不对等等。<br>　　无论如何，努力吧。<br>　　嗯。</p>
 
       
 
@@ -266,32 +267,29 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Leetcode</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">英语学习</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Data Structure</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">读书笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Algorithm</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Tree</a>
         		</li>
       		
 		</ul>
 	</div>
 
       
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/英语学习//" class="article-tag-list-link color5">英语学习</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
       
 
@@ -341,7 +339,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://www.quanlion.com/2017/09/21/最近英语学习的一点心得/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.quanlion.com/2018/01/30/Leetcode之旅-从了解一棵树开始-0/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -355,18 +353,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/09/23/关于最近薛之谦事件的一点看法/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          关于最近薛之谦事件的一点看法
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/09/20/Brainy-is-the-new-sexy/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Leetcode之旅|Brainy is the new sexy</div>
+    <a href="/2018/01/27/链表啊，链表！-4/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Leetcode之旅|链表啊，链表！(3)</div>
       <i class="icon-circle-right"></i>
     </a>
   
