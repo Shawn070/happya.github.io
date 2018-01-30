@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.quanlion.com">
-  <title>Leetcode之旅|链表啊，链表！(3) | 福尔摩狮的博客</title>
+  <title>Leetcode之旅|链表啊，链表！（4） | 福尔摩狮的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="已经一周没更新博客了，这周真是命途多舛的一周。先是工作上的问题，后是人际关系的问题，以为已经够悲催了，觉得至少应该保持身体健康，心情愉悦，然后督促自己去健身，保持强健的体魄。坚持了三天后，被一个爱diss人的普拉提教练给push，然后很悲剧地把腰给伤了。当我回家，躺在床上，发现自己坐也坐不起来，站也站不起来的时候，眼泪止不住地流：我这是何苦呢？我又不胖[泪崩][泪崩][泪崩]。然后打开手机，发">
-<meta name="keywords" content="Leetcode,Data Structure,Algorithm">
+  <meta name="description" content="貌似已经不务正业很久了，今天老板来找我的时候我戴着降噪效果超好的耳机一脸茫然地看着他，还好没有在刷题，不然又是在纸上比划一堆数字和箭头。。。感觉春假前都没心思做那些实验了，让我安心刷刷题看看书吧。　　今天回顾的也是一道easy难度的题，160. Intersection of Two Linked Lists，不过我觉得还挺有意思的，这种思路和方法应该以后可以用在解决其他问题上。 题目描述">
+<meta name="keywords" content="Leetcode,随笔,Data Structure,Algorithm,Linked List">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode之旅|链表啊，链表！(3)">
-<meta property="og:url" content="http://www.quanlion.com/2018/01/27/链表啊，链表！-4/index.html">
+<meta property="og:title" content="Leetcode之旅|链表啊，链表！（4）">
+<meta property="og:url" content="http://www.quanlion.com/2018/01/30/Leetcode之旅-链表啊，链表！（4）/index.html">
 <meta property="og:site_name" content="福尔摩狮的博客">
-<meta property="og:description" content="已经一周没更新博客了，这周真是命途多舛的一周。先是工作上的问题，后是人际关系的问题，以为已经够悲催了，觉得至少应该保持身体健康，心情愉悦，然后督促自己去健身，保持强健的体魄。坚持了三天后，被一个爱diss人的普拉提教练给push，然后很悲剧地把腰给伤了。当我回家，躺在床上，发现自己坐也坐不起来，站也站不起来的时候，眼泪止不住地流：我这是何苦呢？我又不胖[泪崩][泪崩][泪崩]。然后打开手机，发">
-<meta property="og:updated_time" content="2018-01-29T16:37:17.413Z">
+<meta property="og:description" content="貌似已经不务正业很久了，今天老板来找我的时候我戴着降噪效果超好的耳机一脸茫然地看着他，还好没有在刷题，不然又是在纸上比划一堆数字和箭头。。。感觉春假前都没心思做那些实验了，让我安心刷刷题看看书吧。　　今天回顾的也是一道easy难度的题，160. Intersection of Two Linked Lists，不过我觉得还挺有意思的，这种思路和方法应该以后可以用在解决其他问题上。 题目描述">
+<meta property="og:updated_time" content="2018-01-30T13:31:56.410Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leetcode之旅|链表啊，链表！(3)">
-<meta name="twitter:description" content="已经一周没更新博客了，这周真是命途多舛的一周。先是工作上的问题，后是人际关系的问题，以为已经够悲催了，觉得至少应该保持身体健康，心情愉悦，然后督促自己去健身，保持强健的体魄。坚持了三天后，被一个爱diss人的普拉提教练给push，然后很悲剧地把腰给伤了。当我回家，躺在床上，发现自己坐也坐不起来，站也站不起来的时候，眼泪止不住地流：我这是何苦呢？我又不胖[泪崩][泪崩][泪崩]。然后打开手机，发">
+<meta name="twitter:title" content="Leetcode之旅|链表啊，链表！（4）">
+<meta name="twitter:description" content="貌似已经不务正业很久了，今天老板来找我的时候我戴着降噪效果超好的耳机一脸茫然地看着他，还好没有在刷题，不然又是在纸上比划一堆数字和箭头。。。感觉春假前都没心思做那些实验了，让我安心刷刷题看看书吧。　　今天回顾的也是一道easy难度的题，160. Intersection of Two Linked Lists，不过我觉得还挺有意思的，这种思路和方法应该以后可以用在解决其他问题上。 题目描述">
   
     <link rel="alternative" href="/atom.xml" title="福尔摩狮的博客" type="application/atom+xml">
   
@@ -164,35 +164,36 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-链表啊，链表！-4" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Leetcode之旅-链表啊，链表！（4）" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Leetcode之旅|链表啊，链表！(3)
+      Leetcode之旅|链表啊，链表！（4）
     </h1>
   
 
         
-        <a href="/2018/01/27/链表啊，链表！-4/" class="archive-article-date">
-  	<time datetime="2018-01-27T12:12:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-27</time>
+        <a href="/2018/01/30/Leetcode之旅-链表啊，链表！（4）/" class="archive-article-date">
+  	<time datetime="2018-01-30T12:28:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-30</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>　　已经一周没更新博客了，这周真是命途多舛的一周。先是工作上的问题，后是人际关系的问题，以为已经够悲催了，觉得至少应该保持身体健康，心情愉悦，然后督促自己去健身，保持强健的体魄。坚持了三天后，被一个爱diss人的普拉提教练给push，然后很悲剧地把腰给伤了。当我回家，躺在床上，发现自己坐也坐不起来，站也站不起来的时候，眼泪止不住地流：我这是何苦呢？我又不胖[泪崩][泪崩][泪崩]。然后打开手机，发现自己都不知该找谁寻求安慰，毕竟我的朋友都胖也不健身，一个胖子看到身边的瘦子还这么上进估计也不想搭理我。</p>
-<p>　　从周三晚上到现在，躺着床上难受，也许是因为太孤独，哭了好多，也胡思乱想了好多，既顾影自怜，也认真地咽下了许多失望。写这篇博客，可能只是想像以前一样：即使知道徒劳无功，但只有让自己忙起来才不会那么难过。</p>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a><a href="https://leetcode.com/problems/reorder-list/description/" target="_blank" rel="noopener">题目描述</a></h2><blockquote>
-<p>　　今天写的这道题和之前<a href="http://www.quanlion.com/2018/01/15/Leetcode%E4%B9%8B%E6%97%85%EF%BC%9A%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8BP25/">反转k个节点</a>的这道有点类似,即：对一个已知链表：$L_0→L_1→…→L_{n-1}→L_n$,改变其链接顺序为：$L_0→L_n→L_1→L_{n-1}→L_2→L_{n-2}→…$。即第一个后为最后一个，接着是第二个，接着是倒数第二个…比如原链表为{1,2,3,4},修改后变为{1,4,2,3}。要求是原位修改，即不能改变原节点的值，只改变它们之间的先后顺序，也不需要返回任何值。
-　　</p>
-</blockquote>
-<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>　　说实话，这道题我拿到手的时候基本没思路，因为链表这种数据结构的特殊性导致我们既无法通过下标直接访问某个节点，也无法知道某个节点的前驱节点。后来看一些帖子说这个问题是<a href="https://leetcode.com/problems/reverse-linked-list/description/" target="_blank" rel="noopener">反转节点</a>这道题的延伸，就有了想法。<br>　　我们不妨把链表看作一根均匀分布珠子的项链，然后让它对折，这样第一颗珠子会和最后一颗珠子对应，第二颗会和倒数第二颗对应，以此类推。这样一来，我们同步地遍历这两段绳子，不就可以按照要求缀出新的项链了吗？<br>　　所以问题就可以这么解决：我们将链表从中间分开，将后面那半反转，然后将两部分逐个拼接。这会用到我们常用的两个套路：找到中间位置和链表的反转。第一个套路就是熟悉的slow-fast指针法，即设置slow和fast两个指针，slow每次走一步，fast每次走两步，这样当fast到达终点时，slow会走一半到中间。根据需求可以对slow和fast进行初始化，比如slow=fast=head，或者slow=head,fast=head.next。第二个套路也很熟悉，即对每个节点保存其Pre和next，将其对调即可，而且因为是逐个反转，pre,cur,next会逐个后移，前驱与后继信息得以在循环中传递。<br>　　虽然这样，我们可能还会有一个问题：如果珠子是奇数个怎么办？这个好解决，因为奇数个珠子的项链肯定存在最中间的一颗，而这颗肯定会放在最后，我们只要将这颗珠子放在后半部分的第一个，这样后半部分反转后它即为这一半的最后一颗，在拼接时，由于后半部分晚于前半部分，所以这颗珠子肯定会是最后一个。<br>　　代码如下：</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode(object):</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.next = None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reorderList</span><span class="params">(self, head)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type head: ListNode</span></span><br><span class="line"><span class="string">        :rtype: void Do not return anything, modify head in-place instead.</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> head <span class="keyword">or</span> <span class="keyword">not</span> head.next:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 套路一：通过slow和fast两个指针找到中心节点    </span></span><br><span class="line">        slow = head</span><br><span class="line">        fast = head.next</span><br><span class="line">        <span class="keyword">while</span> fast <span class="keyword">and</span> fast.next:</span><br><span class="line">            slow = slow.next</span><br><span class="line">            fast = fast.next.next</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 将链表以最中心的节点为分界线，划分为两个链表</span></span><br><span class="line">        <span class="comment"># 前面的一半为链表1，后面的链表为链表2</span></span><br><span class="line">        <span class="comment"># 套路二：将链表2反向</span></span><br><span class="line">        pre2 = slow</span><br><span class="line">        head2 = slow.next</span><br><span class="line">        slow.next = <span class="keyword">None</span></span><br><span class="line">        <span class="keyword">while</span>(head2.next):</span><br><span class="line">            _next = head2.next</span><br><span class="line">            head2.next = pre2</span><br><span class="line">            pre2 = head2</span><br><span class="line">            head2 = _next</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 将链表1和反向后的链表2逐个节点地拼接起来，</span></span><br><span class="line">        <span class="comment"># 还原出一个完整的链表</span></span><br><span class="line">        head2.next = pre2</span><br><span class="line">        head1 = head</span><br><span class="line">        <span class="keyword">while</span> head1 <span class="keyword">and</span> head2:</span><br><span class="line">            tmp1 = head1.next</span><br><span class="line">            tmp2 = head2.next</span><br><span class="line">            head1.next = head2</span><br><span class="line">            head2.next = tmp1</span><br><span class="line">            head2 = tmp2</span><br><span class="line">            head1 = tmp1</span><br><span class="line">        <span class="keyword">return</span></span><br></pre></td></tr></table></figure>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>　　虽然没有都更新到博客里，但链表这个主题的题目已经基本告一段落了，下一步是tree，已经被递归给虐惨。后面的链表的相关题目应该还是会找机会更新，免得自己忘记。</p>
+        <p>　　<br>　　貌似已经不务正业很久了，今天老板来找我的时候我戴着降噪效果超好的耳机一脸茫然地看着他，还好没有在刷题，不然又是在纸上比划一堆数字和箭头。。。感觉春假前都没心思做那些实验了，让我安心刷刷题看看书吧。<br>　　今天回顾的也是一道easy难度的题，<a href="https://leetcode.com/problems/intersection-of-two-linked-lists/description/" target="_blank" rel="noopener">160. Intersection of Two Linked Lists</a>，不过我觉得还挺有意思的，这种思路和方法应该以后可以用在解决其他问题上。</p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>　　给出两个链表，这两个链表可能会有交点和共享的节点，如下图所示，以a1和b1为head的两个链表在c1相交，并且共享了c1和接下来的c2,c3两个节点。现在需要解决的问题是，对于给定的两个链表，如果存在交点，找出最开始相交的节点；如果不存在，返回null。要求是不能对原来的链表作任何修改。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">A:          a1 → a2</span><br><span class="line">                   ↘</span><br><span class="line">                     c1 → c2 → c3</span><br><span class="line">                   ↗            </span><br><span class="line">B:     b1 → b2 → b3</span><br></pre></td></tr></table></figure>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>　　<br>　　这个问题让我想到之前一个抛掷硬币的问题(感慨一句自己的思维真发散啊！)。 对一枚不均匀的硬币，即抛掷后结果为头像和字的概率不是都为1/2，假设分别是$p_1$和$p_2$，现在两个人玩抛硬币的游戏，怎样保证两人是公平游戏？</p>
+<p>－－－－－－－－－－－－揭晓答案－－－－－－－－－－－－－－－－－－－－－－－－－－－</p>
+<p>　　答案是：人为制造概率相等的事件。比如连续抛掷两次，都是头像的概率是$p_1^2$，都是字的概率是$p_2^2$，先头像后字、先字后头像的概率相等都是$p_1p_2$。See?这样就人为制造了两个概率相等的事件。</p>
+<p>　　为啥我会想到这个貌似毫不相关的问题呢？因为这个也是要人为制造两段长度相等的路径。具体来说，我们需要走两段经历节点数相同的路径，并且最终能在相交处(c1)相遇。怎么做到呢？</p>
+<p>　　假设相交前链表A的节点数为a,相交前链表B的节点数为b，共有的节点数为c，由于a和b之间没有任何关系，很容易就能想到能实现的相同长度的路径为a+b+c。怎么做到呢？只需要设定两个指针，pa和pb，分别从headA和headB开始出发，走完一个链表后再从另一个链表开始走，比如pa从a1走到c3的距离是(a+c)，然后再从b1开始，走到c1的距离是(a+b+c)；相对的,pb从b1走到c3的距离为(b+c)，然后再从a1开始，走到c1的距离也是(a+b+c)。这样，就通过走相同的距离，最终在交点相遇，循环终止。代码如下：</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getIntersectionNode</span><span class="params">(self, headA, headB)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    :type head1, head1: ListNode</span></span><br><span class="line"><span class="string">    :rtype: ListNode</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> headA <span class="keyword">or</span> <span class="keyword">not</span> headB:</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line">    pa = headA</span><br><span class="line">    pb = headB</span><br><span class="line">    <span class="keyword">while</span> pa!=pb:</span><br><span class="line">        pa = pa.next <span class="keyword">if</span> pa <span class="keyword">else</span> headB</span><br><span class="line">        pb = pb.next <span class="keyword">if</span> pb <span class="keyword">else</span> headA</span><br><span class="line">    <span class="keyword">return</span> pa</span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>　　思路比答案重要。<br>　　希望我刷题的过程是不断学习和积累思维方法的过程。加油～～～</p>
 
       
 
@@ -241,11 +242,19 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Data Structure</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Algorithm</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Linked List</a>
         		</li>
       		
 		</ul>
@@ -301,7 +310,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://www.quanlion.com/2018/01/27/链表啊，链表！-4/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.quanlion.com/2018/01/30/Leetcode之旅-链表啊，链表！（4）/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -315,18 +324,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/01/30/Leetcode之旅-从了解一棵树开始-0/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Leetcode之旅|从了解一棵树开始(0)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/01/27/链表啊，链表！-3/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Leetcode之旅|链表啊，链表！(3)</div>
+    <a href="/2018/01/30/Leetcode之旅-从了解一棵树开始-0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Leetcode之旅|从了解一棵树开始(0)</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -517,11 +517,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">娱乐八卦</a>
+                <a href="javascript:void(0)" class="js-tag color2">Linked List</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">英语学习</a>
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -529,7 +529,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
+                <a href="javascript:void(0)" class="js-tag color5">娱乐八卦</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">英语学习</a>
               </li>
              
               <li class="article-tag-list-item">
