@@ -188,10 +188,10 @@
 <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>　　给出两个链表，这两个链表可能会有交点和共享的节点，如下图所示，以a1和b1为head的两个链表在c1相交，并且共享了c1和接下来的c2,c3两个节点。现在需要解决的问题是，对于给定的两个链表，如果存在交点，找出最开始相交的节点；如果不存在，返回null。要求是不能对原来的链表作任何修改。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">A:          a1 → a2</span><br><span class="line">                   ↘</span><br><span class="line">                     c1 → c2 → c3</span><br><span class="line">                   ↗            </span><br><span class="line">B:     b1 → b2 → b3</span><br></pre></td></tr></table></figure>
 <h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>　　<br>　　这个问题让我想到之前一个抛掷硬币的问题(感慨一句自己的思维真发散啊！)。 对一枚不均匀的硬币，即抛掷后结果为头像和字的概率不是都为1/2，假设分别是$p_1$和$p_2$，现在两个人玩抛硬币的游戏，怎样保证两人是公平游戏？</p>
-<p>－－－－－－－－－－－－揭晓答案－－－－－－－－－－－－－－－－－－－－－－－－－－－</p>
-<p>　　答案是：人为制造概率相等的事件。比如连续抛掷两次，都是头像的概率是$p_1^2$，都是字的概率是$p_2^2$，先头像后字、先字后头像的概率相等都是$p_1p_2$。See?这样就人为制造了两个概率相等的事件。</p>
-<p>　　为啥我会想到这个貌似毫不相关的问题呢？因为这个也是要人为制造两段长度相等的路径。具体来说，我们需要走两段经历节点数相同的路径，并且最终能在相交处(c1)相遇。怎么做到呢？</p>
-<p>　　假设相交前链表A的节点数为a,相交前链表B的节点数为b，共有的节点数为c，由于a和b之间没有任何关系，很容易就能想到能实现的相同长度的路径为a+b+c。怎么做到呢？只需要设定两个指针，pa和pb，分别从headA和headB开始出发，走完一个链表后再从另一个链表开始走，比如pa从a1走到c3的距离是(a+c)，然后再从b1开始，走到c1的距离是(a+b+c)；相对的,pb从b1走到c3的距离为(b+c)，然后再从a1开始，走到c1的距离也是(a+b+c)。这样，就通过走相同的距离，最终在交点相遇，循环终止。代码如下：</p>
+<p>－－－－－－－－－－－－－－－－－－揭晓答案－－－－－－－－－－－－－－－－－－－－－</p>
+<p>　　答案是：人为制造概率相等的事件。比如连续抛掷两次，都是头像的概率是$p_1^2$，都是字的概率是$p_2^2$，先头像后字、先字后头像的概率相等都是$p_1p_2$。See？这样就人为制造了两个概率相等的事件。</p>
+<p>　　为啥我会想到这个貌似毫不相关的问题呢？因为和这道题的解题思路很类似，只是这个是要人为制造两段长度相等的路径。具体来说，我们需要走两段经历节点数相同的路径，并且最终能在相交处(c1)相遇。怎么做到呢？</p>
+<p>　　假设相交前链表A的节点数为a,相交前链表B的节点数为b，共有的节点数为c，由于a和b之间没有任何关系，很容易就能想到能实现的相同长度的路径为a+b+c。怎么实现呢？只需要设定两个指针，pa和pb，分别从headA和headB开始出发，走完一个链表后再从另一个链表开始走，比如pa从a1走到c3的距离是(a+c)，然后再从b1开始，走到c1的距离是(a+b+c)；相对的,pb从b1走到c3的距离为(b+c)，然后再从a1开始，走到c1的距离也是(a+b+c)。这样，就通过走相同的距离，最终在交点相遇，循环终止。代码如下：</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getIntersectionNode</span><span class="params">(self, headA, headB)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    :type head1, head1: ListNode</span></span><br><span class="line"><span class="string">    :rtype: ListNode</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> headA <span class="keyword">or</span> <span class="keyword">not</span> headB:</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line">    pa = headA</span><br><span class="line">    pb = headB</span><br><span class="line">    <span class="keyword">while</span> pa!=pb:</span><br><span class="line">        pa = pa.next <span class="keyword">if</span> pa <span class="keyword">else</span> headB</span><br><span class="line">        pb = pb.next <span class="keyword">if</span> pb <span class="keyword">else</span> headA</span><br><span class="line">    <span class="keyword">return</span> pa</span><br></pre></td></tr></table></figure>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>　　思路比答案重要。<br>　　希望我刷题的过程是不断学习和积累思维方法的过程。加油～～～</p>
 
@@ -215,15 +215,15 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Linked List</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Data Structure</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Algorithm</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Linked List</a>
         		</li>
       		
 		</ul>
@@ -1320,6 +1320,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Linked List</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Data Structure</a>
               </li>
              
@@ -1328,15 +1332,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Tree</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Linked list</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Linked List</a>
+                <a href="javascript:void(0)" class="js-tag color5">Tree</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1348,15 +1348,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">娱乐八卦</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">英语学习</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">降维算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">娱乐八卦</a>
               </li>
             
             <div class="clearfix"></div>
